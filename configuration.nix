@@ -1,27 +1,26 @@
 { pkgs, ... }:{
+  # Boot
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;  
     kernelPackages = pkgs.linuxPackages_latest;
   };
-  
+
+  # Hardware
   hardware.bluetooth.enable = true;
 
+  # Metworking 
   networking = {
     hostName = "nixos"; 
     networkmanager.enable = true;
     firewall.enable = true;
   };
 
-  powerManagement.enable = false;
-
+  # Nix
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
     extraOptions = '' warn-dirty = false '';
   };
-  
-  nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "25.05";
 
   # Time zone + Locales
   time.timeZone = "Europe/Moscow";
@@ -44,4 +43,8 @@
     description = "willowispll";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+
+  # Some Shit
+  nixpkgs.config.allowUnfree = true;
+  system.stateVersion = "25.05";
 }

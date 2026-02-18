@@ -6,6 +6,10 @@
       url = "github:matthew-hre/discord-rpc-lsp-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixcord = {
+      url = "github:FlameFlag/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,16 +18,12 @@
       url = "github:glide-browser/glide.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vtubfetch = {
-      url = "git+https://codeberg.org/Willowispll/vtubfetch.git";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, discord-rpc-lsp, spicetify-nix, glide, vtubfetch, home-manager } @inputs: {
+  outputs = { self, nixpkgs, discord-rpc-lsp, nixcord, spicetify-nix, glide, home-manager } @inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem { 
       specialArgs = {inherit inputs;};
       modules = [
@@ -33,7 +33,7 @@
         ./applications.nix
         ./spicetify.nix
         
-        ./homePkgs/homeMain.nix
+        ./homeMain.nix
         ./secureBoot/lanzaboote.nix
       ];
     };

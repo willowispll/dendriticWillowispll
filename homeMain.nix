@@ -4,7 +4,7 @@
   ];
   home-manager = {
     useGlobalPkgs = true;
-    useUserPackages = false;
+    useUserPackages = true;
     backupFileExtension = "backup";
     extraSpecialArgs = {inherit inputs;};
     users.willowispll = {
@@ -12,18 +12,7 @@
       home.homeDirectory = "/home/willowispll";
       home.stateVersion = "25.05";
 
-      imports = [
-        ./kitty.nix
-        ./helix.nix
-        
-        {
-          programs.bash.enable = true;
-          fonts.fontconfig.enable = true;
-          xdg.dataFile = {
-            "v2rayN/bin/sing_box/sing-box".source = "${pkgs.sing-box}/bin/sing-box";
-          };
-        }
-      ];
+      imports = [./homePkgs];
     };
   }; 
 }
