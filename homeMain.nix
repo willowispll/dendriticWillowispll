@@ -1,4 +1,4 @@
-{ pkgs, inputs,  ...}:{
+{ lib, inputs,  ...}:{
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -12,7 +12,7 @@
       home.homeDirectory = "/home/willowispll";
       home.stateVersion = "25.05";
 
-      imports = [./homePkgs];
+      imports = lib.filesystem.listFilesRecursive ./homePkgs;
     };
   }; 
 }

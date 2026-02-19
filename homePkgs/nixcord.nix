@@ -5,9 +5,9 @@
     enable = true;
     discord.vencord.enable = true;
     config = {
-      # themeLinks = [
-      #   "https://raw.githubusercontent.com/refact0r/system24/refs/heads/main/theme/flavors/system24-catppuccin-mocha.theme.css"
-      # ];
+      themeLinks = [
+        "https://raw.githubusercontent.com/catppuccin/discord/refs/heads/main/themes/mocha.theme.css"
+      ];
       plugins = {
         crashHandler.enable = true;
         fakeNitro.enable = true;
