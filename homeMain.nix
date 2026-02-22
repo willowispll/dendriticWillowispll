@@ -12,7 +12,7 @@
       home.homeDirectory = "/home/willowispll";
       home.stateVersion = "25.05";
 
-      imports = lib.filesystem.listFilesRecursive ./homePkgs;
+      imports = lib.filesystem.listFilesRecursive ./homePkgs ++ lib.filesystem.listFilesRecursive ./niri/utils;
     };
   }; 
 }

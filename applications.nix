@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:{
   environment.systemPackages = with pkgs; [
     nil v2rayn sing-box
-    fastfetch base16-schemes
+    fastfetch 
     telegram-desktop
     prismlauncher heroic
     onlyoffice-desktopeditors obsidian
