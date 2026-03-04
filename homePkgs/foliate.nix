@@ -1,0 +1,3 @@
+{ ... }:{
+  programs.foliate.enable = true;
+}

@@ -18,10 +18,6 @@
       url = "github:glide-browser/glide.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vtubfetch = {
-      url = "git+https://codeberg.org/Willowispll/vtubfetch.git";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +27,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, discord-rpc-lsp, nixcord, spicetify-nix, glide, vtubfetch, home-manager, stylix } @inputs: {
+  outputs = { self, nixpkgs, discord-rpc-lsp, nixcord, spicetify-nix, glide, home-manager, stylix } @inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem { 
       specialArgs = {inherit inputs;};
       modules = [

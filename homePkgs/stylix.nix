@@ -29,6 +29,9 @@
       mako = {
         enable = true;
       };
+      foliate = {
+        enable = true;
+      };
     };
   };
 }

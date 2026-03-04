@@ -1,16 +1,18 @@
 { pkgs, inputs, ... }:{
   environment.systemPackages = with pkgs; [
     nil v2rayn sing-box
-    fastfetch 
+    tree
     telegram-desktop
     prismlauncher heroic
     onlyoffice-desktopeditors obsidian
     inputs.discord-rpc-lsp.packages.x86_64-linux.default    
     inputs.glide.packages.x86_64-linux.default
-    inputs.vtubfetch.packages.x86_64-linux.default
   ];
-  services.sing-box.enable = true;
   
+  services.sing-box.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+  };
   programs.steam.enable = true;
   
   #Remove packages here:
