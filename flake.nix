@@ -6,6 +6,10 @@
       url = "github:matthew-hre/discord-rpc-lsp-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:niri-wm/niri/wip/branch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixcord = {
       url = "github:FlameFlag/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,8 +31,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, discord-rpc-lsp, nixcord, spicetify-nix, glide, home-manager, stylix } @inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem { 
+  outputs = { self, ... } @inputs: {
+    nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem { 
       specialArgs = {inherit inputs;};
       modules = [
         ./hardware-configuration.nix

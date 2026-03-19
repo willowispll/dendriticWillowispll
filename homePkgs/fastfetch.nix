@@ -57,7 +57,7 @@
 
         {
           type = "packages";
-          format = "{}";
+          format = "{} (nix)";
           key = "pkgs   ";
           keyColor = "33";
         }
