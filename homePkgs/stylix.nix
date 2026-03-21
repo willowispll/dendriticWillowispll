@@ -16,6 +16,7 @@
       mako.enable = true;
       foliate.enable = true;
       zed.enable = true;
+      obsidian.enable = true;
     };
   };
 }

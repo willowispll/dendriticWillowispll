@@ -18,8 +18,11 @@
 
   # Nix
   nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
-    extraOptions = ''warn-dirty = false '';
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    extraOptions = "warn-dirty = false ";
   };
 
   # Time zone + Locales
@@ -41,7 +44,10 @@
   users.users.willowispll = {
     isNormalUser = true;
     description = "willowispll";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   # Some Shit

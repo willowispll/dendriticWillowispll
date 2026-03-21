@@ -6,9 +6,17 @@
       {
         layer = "bottom";
 
-        modules-left = ["niri/workspaces" "niri/window"];
+        modules-left = [
+          "niri/workspaces"
+          "niri/window"
+        ];
         modules-center = ["clock"];
-        modules-right = ["tray" "battery" "cpu" "memory"];
+        modules-right = [
+          "tray"
+          "battery"
+          "cpu"
+          "memory"
+        ];
 
         pulseaudio = {
           format = "vol: {volume}%";

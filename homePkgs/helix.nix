@@ -11,11 +11,17 @@
       language = [
         {
           name = "rust";
-          language-servers = ["discord-rpc" "rust-analyzer"];
+          language-servers = [
+            "discord-rpc"
+            "rust-analyzer"
+          ];
         }
         {
           name = "nix";
-          language-servers = ["discord-rpc" "nil"];
+          language-servers = [
+            "discord-rpc"
+            "nil"
+          ];
         }
       ];
     };
