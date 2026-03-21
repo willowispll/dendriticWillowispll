@@ -31,8 +31,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, ... } @inputs: {
-    nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem { 
+  outputs = {self, ...} @ inputs: {
+    nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hardware-configuration.nix

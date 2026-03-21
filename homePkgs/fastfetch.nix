@@ -1,4 +1,4 @@
-{
+{...}: {
   programs.fastfetch = {
     enable = true;
 

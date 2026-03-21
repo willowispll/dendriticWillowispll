@@ -1,4 +1,8 @@
-{ lib, inputs,  ...}:{
+{
+  lib,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -14,6 +18,5 @@
 
       imports = lib.filesystem.listFilesRecursive ./homePkgs ++ lib.filesystem.listFilesRecursive ./niri/utils;
     };
-  }; 
+  };
 }
-

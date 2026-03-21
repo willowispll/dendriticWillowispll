@@ -1,4 +1,4 @@
-{ ... }:{
+{...}: {
   programs.helix = {
     enable = true;
     settings.theme = "catppuccin_mocha";
@@ -7,7 +7,7 @@
       language-server.discord-rpc = {
         command = "/run/current-system/sw/bin/discord-rpc-lsp-flake";
       };
-    
+
       language = [
         {
           name = "rust";
@@ -17,8 +17,7 @@
           name = "nix";
           language-servers = ["discord-rpc" "nil"];
         }
-      ];  
-      
+      ];
     };
   };
 }

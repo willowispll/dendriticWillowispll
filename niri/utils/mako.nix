@@ -1,3 +1,3 @@
-{ ... }:{
+{...}: {
   services.mako.enable = true;
 }

@@ -1,44 +1,46 @@
-{ ... }: {
+{...}: {
   programs.waybar = {
     enable = true;
 
-    settings = [{
-      layer = "bottom";
+    settings = [
+      {
+        layer = "bottom";
 
-      modules-left = [ "niri/workspaces" "niri/window" ];
-      modules-center = [ "clock" ];
-      modules-right = [ "tray" "battery" "cpu" "memory" ];
+        modules-left = ["niri/workspaces" "niri/window"];
+        modules-center = ["clock"];
+        modules-right = ["tray" "battery" "cpu" "memory"];
 
-      pulseaudio = {
-        format = "vol: {volume}%";
-        "on-click" = "swayosd-client --output-volume mute-toggle";
-        "on-click-right" = "flatpak run com.saivert.pwvucontrol";
-      };
-      
-      "niri/workspaces" = {
-        format = "{index}";
-      };
+        pulseaudio = {
+          format = "vol: {volume}%";
+          "on-click" = "swayosd-client --output-volume mute-toggle";
+          "on-click-right" = "flatpak run com.saivert.pwvucontrol";
+        };
 
-      clock = {
-        format = "{:%d %b %H:%M}";
-        interval = 1;
-        "tooltip-format" = "{:%A %d %B %Y}";
-      };
+        "niri/workspaces" = {
+          format = "{index}";
+        };
 
-      tray = {
-        spacing = 12;
-      };
+        clock = {
+          format = "{:%d %b %H:%M}";
+          interval = 1;
+          "tooltip-format" = "{:%A %d %B %Y}";
+        };
 
-      memory = {
-        format = "mem: {percentage}%";
-        interval = 1;
-      };
+        tray = {
+          spacing = 12;
+        };
 
-      cpu = {
-        format = "cpu: {usage}%";
-        interval = 1;
-      };
-    }];
+        memory = {
+          format = "mem: {percentage}%";
+          interval = 1;
+        };
+
+        cpu = {
+          format = "cpu: {usage}%";
+          interval = 1;
+        };
+      }
+    ];
 
     style = ''
       window#waybar {
@@ -63,7 +65,7 @@
         border-radius: 100%;
         border: 6px #f5c2e7;
         font-weight: 800;
-        color: #a6adc8; 
+        color: #a6adc8;
       }
 
       #workspaces button.urgent {
