@@ -1,8 +1,12 @@
-{
-  lib,
-  inputs,
-  ...
-}: {
+{inputs, ...}: let
+  inherit (inputs.nixpkgs.lib.fileset) toList fileFilter;
+  tree = path:
+    toList (fileFilter (file:
+      if file.type == "directory"
+      then true
+      else file.hasExt "nix" && !(inputs.nixpkgs.lib.hasPrefix "_" file.name))
+    path);
+in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -17,7 +21,7 @@
       home.stateVersion = "25.05";
 
       imports =
-        lib.filesystem.listFilesRecursive ./homePkgs ++ lib.filesystem.listFilesRecursive ./niri/utils;
+        tree ./homePkgs ++ tree ./niri/utils;
     };
   };
 }
