@@ -1,7 +1,10 @@
 {
   description = "A very basic flake";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
     discord-rpc-lsp = {
       url = "github:matthew-hre/discord-rpc-lsp-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,19 +34,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = {self, ...} @ inputs: {
-    nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hardware-configuration.nix
-        ./configuration.nix
-        ./applications.nix
-        ./spicetify.nix
 
-        ./niri/niri.nix
-        ./homeMain.nix
-        ./secureBoot/lanzaboote.nix
-      ];
+  outputs = inputs: let
+    inherit (inputs.nixpkgs.lib.fileset) toList fileFilter;
+    tree = path:
+      toList (fileFilter (file:
+        file.hasExt "nix" && !(inputs.nixpkgs.lib.hasPrefix "_" file.name))
+      path);
+  in
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = tree ./modules;
+      _module.args = { inherit tree; };
     };
-  };
 }
