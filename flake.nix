@@ -37,15 +37,16 @@
     };
   };
 
-  outputs = inputs: let
-    inherit (inputs.nixpkgs.lib.fileset) toList fileFilter;
-    tree = path:
-      toList (fileFilter (file:
-        file.hasExt "nix" && !(inputs.nixpkgs.lib.hasPrefix "_" file.name))
-      path);
-  in
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs =
+    inputs:
+    let
+      inherit (inputs.nixpkgs.lib.fileset) toList fileFilter;
+      tree =
+        path:
+        toList (fileFilter (file: file.hasExt "nix" && !(inputs.nixpkgs.lib.hasPrefix "_" file.name)) path);
+    in
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = tree ./modules;
-      _module.args = {inherit tree;};
+      _module.args = { inherit tree; };
     };
 }

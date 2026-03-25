@@ -2,14 +2,15 @@
   self,
   inputs,
   ...
-}: {
+}:
+{
   flake.nixosModules.homeManager = {
-    imports = [inputs.home-manager.nixosModules.home-manager];
+    imports = [ inputs.home-manager.nixosModules.home-manager ];
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = "backup";
-      extraSpecialArgs = {inherit inputs;};
+      extraSpecialArgs = { inherit inputs; };
       users.willowispll = {
         home.username = "willowispll";
         home.homeDirectory = "/home/willowispll";
@@ -25,6 +26,7 @@
           self.homeModules.glide
           self.homeModules.foliate
           self.homeModules.zed
+          self.homeModules.spicetify
           # utils
           self.homeModules.bash
           self.homeModules.fastfetch

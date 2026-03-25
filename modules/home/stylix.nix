@@ -1,27 +1,27 @@
 {
-  flake.homeModules.stylix = {
-    inputs,
-    pkgs,
-    ...
-  }: {
-    imports = [inputs.stylix.homeModules.stylix];
+  flake.homeModules.stylix =
+    {
+      inputs,
+      pkgs,
+      ...
+    }:
+    {
+      imports = [ inputs.stylix.homeModules.stylix ];
 
-    gtk.gtk4.theme = null;
+      stylix = {
+        enable = true;
+        autoEnable = false;
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
-    stylix = {
-      enable = true;
-      autoEnable = false;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-
-      targets = {
-        gtk.enable = true;
-        qt.enable = true;
-        fuzzel.enable = true;
-        mako.enable = true;
-        foliate.enable = true;
-        zed.enable = true;
-        obsidian.enable = true;
+        targets = {
+          gtk.enable = true;
+          qt.enable = true;
+          fuzzel.enable = true;
+          mako.enable = true;
+          foliate.enable = true;
+          zed.enable = true;
+          obsidian.enable = true;
+        };
       };
     };
-  };
 }
