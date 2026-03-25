@@ -5,12 +5,13 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    discord-rpc-lsp = {
-      url = "github:matthew-hre/discord-rpc-lsp-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     niri = {
       url = "github:niri-wm/niri/wip/branch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    glide = {
+      url = "github:glide-browser/glide.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixcord = {
@@ -21,8 +22,9 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    glide = {
-      url = "github:glide-browser/glide.nix";
+
+    discord-rpc-lsp = {
+      url = "github:matthew-hre/discord-rpc-lsp-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -44,6 +46,6 @@
   in
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       imports = tree ./modules;
-      _module.args = { inherit tree; };
+      _module.args = {inherit tree;};
     };
 }

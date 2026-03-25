@@ -1,9 +1,13 @@
 {
-  flake.nixosModules.lanzaboote = { pkgs, lib, ... }: let
+  flake.nixosModules.lanzaboote = {
+    pkgs,
+    lib,
+    ...
+  }: let
     sources = import ./_lon.nix;
     lanzaboote = import sources.lanzaboote;
   in {
-    imports = [ lanzaboote.nixosModules.lanzaboote ];
+    imports = [lanzaboote.nixosModules.lanzaboote];
 
     environment.systemPackages = [
       pkgs.sbctl

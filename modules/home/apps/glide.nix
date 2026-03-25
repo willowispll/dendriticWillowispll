@@ -1,6 +1,6 @@
 {
   flake.homeModules.glide = {inputs, ...}: {
-    imports = [ inputs.glide.homeModules.default ];
+    imports = [inputs.glide.homeModules.default];
     programs.glide-browser.enable = true;
   };
 }

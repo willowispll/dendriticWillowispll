@@ -1,6 +1,10 @@
-{ self, inputs, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosConfigurations.micolash = inputs.nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit inputs; };
+    specialArgs = {inherit inputs;};
     modules = [
       self.nixosModules.micolashHardware
       self.nixosModules.micolashConfiguration
