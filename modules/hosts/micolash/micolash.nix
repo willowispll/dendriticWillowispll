@@ -12,7 +12,6 @@
       self.nixosModules.services
       self.nixosModules.gaming
       self.nixosModules.packages
-
       self.nixosModules.niri
       self.nixosModules.lanzaboote
       self.nixosModules.homeManager

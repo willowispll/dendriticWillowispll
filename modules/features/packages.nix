@@ -14,6 +14,7 @@
         telegram-desktop
         onlyoffice-desktopeditors
         inputs.discord-rpc-lsp.packages.x86_64-linux.default
+        inputs.onelock.packages.${pkgs.stdenv.hostPlatform.system}.dott-tui
       ];
 
       programs.nano.enable = false;
