@@ -10,14 +10,20 @@
       };
 
       # Hardware
-      hardware.bluetooth.enable = true;
+      hardware = {
+        bluetooth.enable = true;
+        enableRedistributableFirmware = true;
+      };
 
       # Networking
       networking = {
         hostName = "amygdala";
-        networkmanager.enable = true;
+        networkmanager = {
+          enable = true;
+          wifi.backend = "iwd";
+          wifi.powersave = false;
+        };
         firewall.enable = true;
-        wireless.iwd.enable = true;
       };
 
       # Nix
