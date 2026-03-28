@@ -11,6 +11,7 @@
         nixd
         tree
         v2rayn
+        brightnessctl
         telegram-desktop
         onlyoffice-desktopeditors
         inputs.discord-rpc-lsp.packages.x86_64-linux.default
