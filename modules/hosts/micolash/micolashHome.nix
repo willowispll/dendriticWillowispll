@@ -2,15 +2,14 @@
   self,
   inputs,
   ...
-}:
-{
+}: {
   flake.nixosModules.micolashHome = {
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    imports = [inputs.home-manager.nixosModules.home-manager];
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = "backup";
-      extraSpecialArgs = { inherit inputs; };
+      extraSpecialArgs = {inherit inputs;};
       users.willowispll = {
         home.username = "willowispll";
         home.homeDirectory = "/home/willowispll";
@@ -34,6 +33,7 @@
           self.homeModules.git
           self.homeModules.nh
           self.homeModules.xdg
+          self.homeModules.lla
           # wm
           self.homeModules.waybar
           self.homeModules.fuzzel
