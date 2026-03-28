@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
     niri = {
       url = "github:niri-wm/niri/wip/branch";
@@ -36,22 +37,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    onelock = {
+    onelocked = {
       url = "github:onelocked/extra-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    vtubfetch = {
+      url = "git+https://codeberg.org/Willowispll/vtubfetch.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs =
-    inputs:
-    let
-      inherit (inputs.nixpkgs.lib.fileset) toList fileFilter;
-      tree =
-        path:
-        toList (fileFilter (file: file.hasExt "nix" && !(inputs.nixpkgs.lib.hasPrefix "_" file.name)) path);
-    in
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = tree ./modules;
-      _module.args = { inherit tree; };
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

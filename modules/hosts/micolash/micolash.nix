@@ -14,7 +14,7 @@
       self.nixosModules.packages
       self.nixosModules.niri
       self.nixosModules.lanzaboote
-      self.nixosModules.homeManager
+      self.nixosModules.micolashHome
     ];
   };
 }

@@ -12,7 +12,7 @@
       self.nixosModules.services
       self.nixosModules.packages
       self.nixosModules.niri
-      self.nixosModules.homeManager
+      self.nixosModules.amygdalaHome
     ];
   };
 }

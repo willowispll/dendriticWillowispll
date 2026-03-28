@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.nixosModules.homeManager = {
+  flake.nixosModules.amygdalaHome = {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
     home-manager = {
       useGlobalPkgs = true;

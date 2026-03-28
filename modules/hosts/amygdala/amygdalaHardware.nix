@@ -1,9 +1,8 @@
 {
-  flake.nixosModules.micolashHardware =
+  flake.nixosModules.amygdalaHardware =
     {
       config,
       lib,
-      pkgs,
       modulesPath,
       ...
     }:
