@@ -18,11 +18,7 @@
       # Networking
       networking = {
         hostName = "amygdala";
-        networkmanager = {
-          enable = true;
-          wifi.backend = "iwd";
-          wifi.powersave = false;
-        };
+        networkmanager.enable = true;
         firewall.enable = true;
       };
 

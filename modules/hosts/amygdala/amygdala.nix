@@ -13,6 +13,7 @@
       self.nixosModules.packages
       self.nixosModules.niri
       self.nixosModules.amygdalaHome
+      self.nixosModules.amnezia
     ];
   };
 }

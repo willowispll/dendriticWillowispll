@@ -25,6 +25,7 @@
           self.homeModules.foliate
           self.homeModules.zed
           self.homeModules.spicetify
+          self.homeModules.nixcord
           # utils
           self.homeModules.bash
           self.homeModules.fastfetch
