@@ -14,6 +14,7 @@
       self.nixosModules.packages
       self.nixosModules.niri
       self.nixosModules.lanzaboote
+      self.nixosModules.amnezia
       self.nixosModules.micolashHome
     ];
   };
