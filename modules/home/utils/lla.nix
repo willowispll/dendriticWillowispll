@@ -8,7 +8,7 @@
   in {
     xdg.configFile."lla/config.toml".source = tomlFormat.generate "lla-config" {
       default_sort = "name";
-      default_format = "default";
+      default_format = "table";
       show_icons = true;
       include_dirs = true;
       permission_format = "symbolic";
@@ -16,7 +16,7 @@
       enabled_plugins = [];
       plugins_dir = config.xdg.configHome + "/lla/plugins";
       exclude_paths = [];
-      default_depth = 3;
+      default_depth = 10;
       editor = "";
 
       sort = {
