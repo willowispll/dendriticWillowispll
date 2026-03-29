@@ -1,18 +1,43 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosConfigurations.amygdala = inputs.nixpkgs.lib.nixosSystem {
-    specialArgs = {inherit inputs;};
-    modules = [
-      self.nixosModules.amygdalaHardware
-      self.nixosModules.amygdalaConfiguration
-      self.nixosModules.services
-      self.nixosModules.packages
-      self.nixosModules.niri
-      self.nixosModules.amnezia
-      self.nixosModules.amygdalaHome
+{self, ...}: let
+  inherit (self.lib) mkSystem;
+in {
+  flake.nixosConfigurations.amygdala = mkSystem {
+    configuration = {
+      system = "x86_64-linux";
+    };
+    nixosModules = with self.nixosModules; [
+      willowispll
+      amygdalaHardware
+      amygdalaConfiguration
+      services
+      packages
+      niri
+      amnezia
+      homeManager
+    ];
+    homeModules = with self.homeModules; [
+      willowispll
+      # apps
+      stylix
+      helix
+      kitty
+      obsidian
+      glide
+      foliate
+      zed
+      spicetify
+      nixcord
+      # utils
+      bash
+      fastfetch
+      fontconfig
+      git
+      nh
+      xdg
+      # wm
+      waybar
+      fuzzel
+      mako
     ];
   };
 }

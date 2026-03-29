@@ -44,16 +44,6 @@
       LC_TIME = "en_US.UTF-8";
     };
 
-    # User account
-    users.users.willowispll = {
-      isNormalUser = true;
-      description = "willowispll";
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-      ];
-    };
-
     nixpkgs.config.allowUnfree = true;
     system.stateVersion = "25.05";
   };
