@@ -13,6 +13,7 @@ in {
       packages
       niri
       amnezia
+      tlp
       homeManager
     ];
     homeModules = with self.homeModules; [
