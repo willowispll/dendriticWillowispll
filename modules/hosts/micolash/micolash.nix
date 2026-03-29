@@ -1,20 +1,49 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosConfigurations.micolash = inputs.nixpkgs.lib.nixosSystem {
-    specialArgs = {inherit inputs;};
-    modules = [
-      self.nixosModules.micolashHardware
-      self.nixosModules.micolashConfiguration
-      self.nixosModules.services
-      self.nixosModules.gaming
-      self.nixosModules.packages
-      self.nixosModules.niri
-      self.nixosModules.lanzaboote
-      self.nixosModules.amnezia
-      self.nixosModules.micolashHome
+{self, ...}: let
+  inherit (self.lib) mkSystem;
+in {
+  flake.nixosConfigurations.micolash = mkSystem {
+    configuration = {
+      system = "x86_64-linux";
+    };
+
+    nixosModules = with self.nixosModules; [
+      willowispll
+      micolashHardware
+      micolashConfiguration
+      services
+      gaming
+      packages
+      niri
+      lanzaboote
+      amnezia
+      homeManager
+    ];
+
+    homeModules = with self.homeModules; [
+      willowispll
+      # apps
+      stylix
+      helix
+      kitty
+      nixcord
+      obs
+      obsidian
+      glide
+      foliate
+      zed
+      spicetify
+      # utils
+      bash
+      fastfetch
+      fontconfig
+      git
+      nh
+      xdg
+      lla
+      # wm
+      waybar
+      fuzzel
+      mako
     ];
   };
 }
