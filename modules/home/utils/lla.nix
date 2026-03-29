@@ -20,7 +20,7 @@
       editor = "";
 
       sort = {
-        dirs_first = false;
+        dirs_first = true;
         case_sensitive = true;
         natural = true;
       };
