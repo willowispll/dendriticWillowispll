@@ -28,6 +28,7 @@ in {
       zed
       spicetify
       nixcord
+      obs
       # utils
       bash
       fastfetch
