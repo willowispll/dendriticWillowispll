@@ -16,6 +16,7 @@ in {
       niri
       lanzaboote
       amnezia
+      v2rayn
       homeManager
     ];
 
