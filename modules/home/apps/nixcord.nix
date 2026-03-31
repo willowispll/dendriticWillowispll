@@ -9,6 +9,7 @@
         themeLinks = [
           "https://raw.githubusercontent.com/catppuccin/discord/refs/heads/main/themes/mocha.theme.css"
         ];
+        disableMinSize = true;
         plugins = {
           crashHandler.enable = true;
           fakeNitro.enable = true;
