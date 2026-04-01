@@ -13,7 +13,6 @@
       onlyoffice-desktopeditors
       inputs.discord-rpc-lsp.packages.x86_64-linux.default
       inputs.vtubfetch.packages.x86_64-linux.default
-      inputs.onelocked.packages.${pkgs.stdenv.hostPlatform.system}.dott-tui
     ];
 
     programs.nano.enable = false;

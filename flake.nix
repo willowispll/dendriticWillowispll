@@ -37,10 +37,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    onelocked = {
-      url = "github:onelocked/extra-modules";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     vtubfetch = {
       url = "git+https://codeberg.org/Willowispll/vtubfetch.git";
       inputs.nixpkgs.follows = "nixpkgs";
