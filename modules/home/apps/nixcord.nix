@@ -4,10 +4,7 @@
 
     programs.nixcord = {
       enable = true;
-      discord = {
-        branch = "canary";
-        vencord.enable = true;
-      };
+      discord.vencord.enable = true;
       config = {
         themeLinks = [
           "https://raw.githubusercontent.com/catppuccin/discord/refs/heads/main/themes/mocha.theme.css"
