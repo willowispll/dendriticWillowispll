@@ -1,8 +1,5 @@
 {
-  flake.nixosModules.services = {
-    services = {
-      displayManager.ly.enable = true;
-      blueman.enable = true;
-    };
+  flake.nixosModules.ly = {
+    services.displayManager.ly.enable = true;
   };
 }

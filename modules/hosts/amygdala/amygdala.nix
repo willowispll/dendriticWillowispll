@@ -9,7 +9,7 @@ in {
       willowispll
       amygdalaHardware
       amygdalaConfiguration
-      services
+      ly
       packages
       niri
       amnezia
