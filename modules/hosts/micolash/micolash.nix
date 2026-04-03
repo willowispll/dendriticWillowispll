@@ -10,7 +10,7 @@ in {
       willowispll
       micolashHardware
       micolashConfiguration
-      services
+      ly
       gaming
       packages
       niri
