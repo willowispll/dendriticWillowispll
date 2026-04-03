@@ -1,11 +1,18 @@
 {
   flake.homeModules.helix = {
+    pkgs,
+    inputs,
+    ...
+  }: {
     programs.helix = {
       enable = true;
       settings.theme = "catppuccin_mocha";
 
       languages = {
-        language-server.discord-rpc.command = "/run/current-system/sw/bin/discord-rpc-lsp-flake";
+        language-server.discord-rpc = {
+          package = inputs.discord-rpc-lsp.packages.${pkgs.stdenv.hostPlatform.system}.default;
+          command = "discord-rpc-lsp-flake";
+        };
 
         language = [
           {
