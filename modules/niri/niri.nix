@@ -13,7 +13,7 @@
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       waypaper
-      swww
+      awww
       pavucontrol
     ];
   };
