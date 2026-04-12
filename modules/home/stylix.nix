@@ -19,6 +19,7 @@
         foliate.enable = true;
         zed.enable = true;
         obsidian.enable = true;
+        anki.enable = true;
       };
     };
   };

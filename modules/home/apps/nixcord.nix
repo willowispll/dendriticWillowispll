@@ -4,7 +4,8 @@
 
     programs.nixcord = {
       enable = true;
-      discord.vencord.enable = true;
+      discord.vencord.enable = false;
+      discord.equicord.enable = true;
       config = {
         themeLinks = [
           "https://raw.githubusercontent.com/catppuccin/discord/refs/heads/main/themes/mocha.theme.css"
