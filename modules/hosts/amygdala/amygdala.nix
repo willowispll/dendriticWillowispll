@@ -19,6 +19,7 @@ in {
     homeModules = with self.homeModules; [
       willowispll
       # apps
+      anki
       stylix
       helix
       kitty
