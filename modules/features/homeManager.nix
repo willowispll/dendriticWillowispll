@@ -2,7 +2,8 @@
   self,
   inputs,
   ...
-}: {
+}:
+{
   flake.nixosModules.homeManager = {
     imports = [
       inputs.home-manager.nixosModules.home-manager
@@ -11,7 +12,7 @@
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = self.variables.backupFileExtension;
-      extraSpecialArgs = {inherit inputs;};
+      extraSpecialArgs = { inherit inputs; };
     };
   };
 }

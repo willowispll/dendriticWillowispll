@@ -1,4 +1,5 @@
-{self, ...}: {
+{ self, ... }:
+{
   flake.nixosModules.willowispll = {
     home-manager.users."${self.variables.username}".home = {
       username = "${self.variables.username}";

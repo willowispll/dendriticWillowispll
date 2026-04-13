@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   flake = {
     options.variables = lib.mkOption {
       readOnly = true;

@@ -1,6 +1,8 @@
-{self, ...}: let
+{ self, ... }:
+let
   inherit (self.lib) mkSystem;
-in {
+in
+{
   flake.nixosConfigurations.micolash = mkSystem {
     configuration = {
       system = "x86_64-linux";

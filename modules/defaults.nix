@@ -1,4 +1,4 @@
 {
-  flake.nixosModules.default = {};
-  flake.homeModules.default = {};
+  flake.nixosModules.default = { };
+  flake.homeModules.default = { };
 }
