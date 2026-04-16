@@ -15,9 +15,8 @@
           disableMinSize = true;
           plugins = {
             crashHandler.enable = true;
-            fakeNitro.enable = true;
             showHiddenChannels.enable = true;
-            showHiddenThings.enable = true;
+            webScreenShareFixes.enable = true;
           };
         };
       };

@@ -7,7 +7,7 @@
     import-tree.url = "github:vic/import-tree";
 
     niri = {
-      url = "github:niri-wm/niri/wip/branch";
+      url = "github:niri-wm/niri/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
