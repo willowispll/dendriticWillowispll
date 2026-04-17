@@ -13,7 +13,7 @@ in
       micolashHardware
       micolashConfiguration
       ly
-      gaming
+      steam
       packages
       niri
       lanzaboote
