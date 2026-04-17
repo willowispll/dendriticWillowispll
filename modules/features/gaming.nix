@@ -1,12 +1,5 @@
 {
-  flake.nixosModules.gaming =
-    { pkgs, ... }:
-    {
-      programs.steam.enable = true;
-
-      environment.systemPackages = with pkgs; [
-        prismlauncher
-        heroic
-      ];
-    };
+  flake.nixosModules.gaming = {
+    programs.steam.enable = true;
+  };
 }
