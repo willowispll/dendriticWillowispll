@@ -13,7 +13,6 @@
         brightnessctl
         telegram-desktop
         onlyoffice-desktopeditors
-        inputs.discord-rpc-lsp.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.vtubfetch.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 

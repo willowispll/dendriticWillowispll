@@ -24,10 +24,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    discord-rpc-lsp = {
-      url = "github:matthew-hre/discord-rpc-lsp-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
