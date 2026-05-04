@@ -15,23 +15,18 @@ in
       packages
       niri
       amnezia
-      tlp
       homeManager
     ];
     homeModules = with self.homeModules; [
       willowispll
       # apps
-      anki
       stylix
       helix
       kitty
-      obsidian
       glide
-      foliate
       zed
       spicetify
       nixcord
-      obs
       # utils
       bash
       fastfetch
