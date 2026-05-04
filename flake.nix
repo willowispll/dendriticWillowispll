@@ -6,11 +6,6 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
-    niri = {
-      url = "github:niri-wm/niri/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     glide = {
       url = "github:glide-browser/glide.nix";
       inputs.nixpkgs.follows = "nixpkgs";
