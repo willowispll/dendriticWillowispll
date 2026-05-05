@@ -6,8 +6,8 @@
 
       programs.nixcord = {
         enable = true;
-        discord.enable = false;
-        vesktop.enable = true;
+        discord.vencord.enable = true;
+        #vesktop.enable = true;
         config = {
           themeLinks = [
             "https://raw.githubusercontent.com/catppuccin/discord/refs/heads/main/themes/mocha.theme.css"
@@ -16,7 +16,7 @@
           plugins = {
             crashHandler.enable = true;
             showHiddenChannels.enable = true;
-            webScreenShareFixes.enable = true;
+            #webScreenShareFixes.enable = true;
           };
         };
       };
