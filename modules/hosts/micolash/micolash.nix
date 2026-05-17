@@ -42,7 +42,6 @@ in
       git
       nh
       xdg
-      lla
       # wm
       waybar
       fuzzel

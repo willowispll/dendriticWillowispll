@@ -8,7 +8,6 @@
     {
       environment.systemPackages = with pkgs; [
         nil
-        lla
         nixd
         brightnessctl
         telegram-desktop
