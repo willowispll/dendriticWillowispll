@@ -194,6 +194,24 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_4"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -276,11 +294,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779157263,
-        "narHash": "sha256-VbiyZkRf8/qr7ObmlyfOHJsNAW5tyZ4MB1+cUwAwdrw=",
+        "lastModified": 1779213149,
+        "narHash": "sha256-Cf+p/T4Z3n9Sw0TiR3kQaIwQI+/hfvLJcoTzeq6yS3E=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "866412a19866b4a8e32d2306a118040afa2b840c",
+        "rev": "bd868f769a69d3b6091a1da68a75cb83a181033c",
         "type": "github"
       },
       "original": {
@@ -314,11 +332,11 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1779153297,
-        "narHash": "sha256-3h3gyVtBfQKYVHkHb/mL2mAbDCCI05i64tzmRE4iglE=",
+        "lastModified": 1779308231,
+        "narHash": "sha256-DTINk5LRLSpzIhHSiWDqdHgH2vh69cpmRqfEE9jygIQ=",
         "owner": "FlameFlag",
         "repo": "nixcord",
-        "rev": "40e462c7896a70fef54b0f530c0fd4189788348b",
+        "rev": "85cc140e9a0352d8b03d9df163832a584deba289",
         "type": "github"
       },
       "original": {
@@ -375,11 +393,11 @@
     },
     "nixpkgs-nixcord": {
       "locked": {
-        "lastModified": 1778737229,
-        "narHash": "sha256-6xWoytx8jFW4PF1GjRm/i/53trbpKGfz6zjzQGBr4cI=",
+        "lastModified": 1779102034,
+        "narHash": "sha256-vZJZjLo513IeI8hjzHFc6TDezUd4uCE2Eq4SNO3DNNg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d7a713c0b7e47c908258e71cba7a2d77cc8d71d5",
+        "rev": "687f05a9184cad4eaf905c48b63649e3a86f5433",
         "type": "github"
       },
       "original": {
@@ -425,7 +443,8 @@
         "nixpkgs": "nixpkgs",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
-        "vtubfetch": "vtubfetch"
+        "vtubfetch": "vtubfetch",
+        "zapret": "zapret"
       }
     },
     "spicetify-nix": {
@@ -527,6 +546,21 @@
         "type": "github"
       }
     },
+    "systems_4": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "tinted-kitty": {
       "flake": false,
       "locked": {
@@ -609,6 +643,44 @@
       "original": {
         "type": "git",
         "url": "https://codeberg.org/Willowispll/vtubfetch.git"
+      }
+    },
+    "zapret": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "zapret-flowseal": "zapret-flowseal"
+      },
+      "locked": {
+        "lastModified": 1779220145,
+        "narHash": "sha256-2u9teaqQKNoktQrcyhsFAvHgUzUL4F63Wv1ZT7amS0M=",
+        "owner": "kartavkun",
+        "repo": "zapret-discord-youtube",
+        "rev": "90db27d16ab45cd97fa0685b446e183e3b346eb7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kartavkun",
+        "repo": "zapret-discord-youtube",
+        "type": "github"
+      }
+    },
+    "zapret-flowseal": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778835707,
+        "narHash": "sha256-VLs4i0d1uJ9gVs7NhfZBPz2cs4LUcifJvIZDi4dM7ss=",
+        "owner": "Flowseal",
+        "repo": "zapret-discord-youtube",
+        "rev": "197dafcaa3a05ab799df8b17865380d14c78ecb9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Flowseal",
+        "repo": "zapret-discord-youtube",
+        "type": "github"
       }
     }
   },

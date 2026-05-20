@@ -13,6 +13,7 @@ in
       micolashHardware
       micolashConfiguration
       ly
+      zapret
       steam
       packages
       niri
