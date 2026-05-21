@@ -12,7 +12,6 @@
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = self.variables.backupFileExtension;
-      extraSpecialArgs = { inherit inputs; };
     };
   };
 }

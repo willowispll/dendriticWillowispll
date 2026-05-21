@@ -1,7 +1,10 @@
 {
+  inputs,
+  ...
+}:
+{
   flake.homeModules.spicetify =
     {
-      inputs,
       pkgs,
       ...
     }:
