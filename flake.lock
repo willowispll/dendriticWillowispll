@@ -632,17 +632,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1774671181,
-        "narHash": "sha256-X4/gvH1geE2Y/EaDy7eTf6ZCd+Vdl1goh9Ip1I9WwdQ=",
-        "ref": "refs/heads/main",
-        "rev": "3d3ae4c936cfc78ce10b96d813f0b29897878b65",
-        "revCount": 3,
-        "type": "git",
-        "url": "https://codeberg.org/Willowispll/vtubfetch.git"
+        "lastModified": 1779324056,
+        "narHash": "sha256-K7z/6a6IImHDbW254jzXkKx664xGw6PVJh8iEZgDHM8=",
+        "owner": "Willowispll",
+        "repo": "vtubfetch",
+        "rev": "7b528a73b052951ea1d70b6087ecf5d2aedb8753",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://codeberg.org/Willowispll/vtubfetch.git"
+        "owner": "Willowispll",
+        "repo": "vtubfetch",
+        "type": "github"
       }
     },
     "zapret": {

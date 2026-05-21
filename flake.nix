@@ -9,7 +9,7 @@
     zapret = {
       url = "github:kartavkun/zapret-discord-youtube";
       inputs.nixpkgs.follows = "nixpkgs";
-    };    
+    };
 
     glide = {
       url = "github:glide-browser/glide.nix";
@@ -34,7 +34,7 @@
     };
 
     vtubfetch = {
-      url = "git+https://codeberg.org/Willowispll/vtubfetch.git";
+      url = "github:Willowispll/vtubfetch";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     anicli-ru = {
