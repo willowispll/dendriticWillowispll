@@ -1,30 +1,36 @@
 {
-  flake.homeModules.xdg = {
-    xdg.desktopEntries = {
-      "Helix" = {
-        name = "Helix";
-        noDisplay = true;
+  flake.homeModules.xdg =
+    { pkgs, ... }:
+    {
+      xdg.dataFile = {
+        "v2rayN/bin/xray/xray".source = "${pkgs.xray}/bin/xray";
+        "v2rayN/bin/sing_box/sing-box".source = "${pkgs.sing-box}/bin/sing-box";
       };
-      "qt5ct" = {
-        name = "Qt5 Configuration Tool";
-        noDisplay = true;
-      };
-      "qt6ct" = {
-        name = "Qt6 Configuration Tool";
-        noDisplay = true;
-      };
-      "kvantummanager" = {
-        name = "Kvantum Manager";
-        noDisplay = true;
-      };
-      "kitty" = {
-        name = "kitty";
-        noDisplay = true;
-      };
-      "blueman-adapters" = {
-        name = "Bluetooth Adaptors";
-        noDisplay = true;
+      xdg.desktopEntries = {
+        "Helix" = {
+          name = "Helix";
+          noDisplay = true;
+        };
+        "qt5ct" = {
+          name = "Qt5 Configuration Tool";
+          noDisplay = true;
+        };
+        "qt6ct" = {
+          name = "Qt6 Configuration Tool";
+          noDisplay = true;
+        };
+        "kvantummanager" = {
+          name = "Kvantum Manager";
+          noDisplay = true;
+        };
+        "kitty" = {
+          name = "kitty";
+          noDisplay = true;
+        };
+        "blueman-adapters" = {
+          name = "Bluetooth Adaptors";
+          noDisplay = true;
+        };
       };
     };
-  };
 }

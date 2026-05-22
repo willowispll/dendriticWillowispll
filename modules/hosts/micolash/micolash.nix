@@ -13,12 +13,11 @@ in
       micolashHardware
       micolashConfiguration
       ly
-      zapret
+      v2rayn
       steam
       packages
       niri
       lanzaboote
-      amnezia
       homeManager
     ];
 
