@@ -13,7 +13,7 @@ in
       micolashHardware
       micolashConfiguration
       ly
-      v2rayn
+      amnezia
       steam
       packages
       niri
