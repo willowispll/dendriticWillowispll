@@ -19,6 +19,7 @@ in
       niri
       lanzaboote
       homeManager
+      zapret
     ];
 
     homeModules = with self.homeModules; [
