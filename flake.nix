@@ -37,10 +37,6 @@
       url = "github:Willowispll/vtubfetch";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    anicli-ru = {
-      url = "github:Willowispll/anicli-ru-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
