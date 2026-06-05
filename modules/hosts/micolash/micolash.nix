@@ -20,6 +20,8 @@ in
       lanzaboote
       homeManager
       zapret
+      tailscale
+      removed
     ];
 
     homeModules = with self.homeModules; [
