@@ -10,6 +10,11 @@
     default = { };
   };
 
+  config.flake = {
+    nixosModules.default = { };
+    homeModules.default = { };
+  };
+
   config.flake.lib = {
     hm = modules: {
       home-manager.users.${self.variables.username}.imports = modules;
