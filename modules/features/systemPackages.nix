@@ -15,11 +15,5 @@
         onlyoffice-desktopeditors
         inputs.vtubfetch.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
-
-      programs.nano.enable = false;
-      documentation = {
-        enable = false;
-        man.enable = false;
-      };
     };
 }
