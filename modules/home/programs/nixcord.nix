@@ -20,6 +20,7 @@
           crashHandler.enable = true;
           showHiddenChannels.enable = true;
           webScreenShareFixes.enable = true;
+          fakeNitro.enable = true;
         };
       };
     };
