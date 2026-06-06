@@ -6,10 +6,10 @@
     programs.nixcord = {
       enable = true;
       discord = {
-        branch = "canary";
-        equicord.enable = true;
-        vencord.enable = false;
+        enable = false;
+        vencord.enable = true;
       };
+      vesktop.enable = true;
 
       config = {
         themeLinks = [
@@ -19,6 +19,7 @@
         plugins = {
           crashHandler.enable = true;
           showHiddenChannels.enable = true;
+          webScreenShareFixes.enable = true;
         };
       };
     };
