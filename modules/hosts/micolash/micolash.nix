@@ -9,46 +9,63 @@ in
     };
 
     nixosModules = with self.nixosModules; [
+      #topLvlModules
       willowispll
-      micolashHardware
+
+      #hostModules
       micolashConfiguration
-      ly
+      micolashHardware
+      lanzaboote
+
+      #featuresModules
+      homeManager
+      removed
+      systemPackages
+
+      #niri
+      niri
+
+      #programs
       amnezia
       steam
-      packages
-      niri
-      lanzaboote
-      homeManager
-      zapret
+
+      #services
+      ly
       tailscale
-      removed
+      zapret
     ];
 
     homeModules = with self.homeModules; [
+      #topLvlModules
       willowispll
-      # apps
+
+      #programs
       anki
-      stylix
+      foliate
+      glide
       helix
       kitty
       nixcord
       obs
       obsidian
-      glide
-      foliate
-      zed
       spicetify
-      # utils
+      zed
+
+      #utils
       bash
       fastfetch
       fontconfig
       git
       nh
       xdg
-      # wm
+
+      #niri
       waybar
       fuzzel
       mako
+
+      #stylix
+      stylix
     ];
   };
 }
