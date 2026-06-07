@@ -9,8 +9,8 @@ in
     };
 
     nixosModules = with self.nixosModules; [
-      #topLvlModules
-      willowispll
+      #userModules
+      userVariables
 
       #hostModules
       micolashConfiguration
@@ -36,8 +36,8 @@ in
     ];
 
     homeModules = with self.homeModules; [
-      #topLvlModules
-      willowispll
+      #userModules
+      userVariables
 
       #programs
       anki

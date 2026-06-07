@@ -1,13 +1,13 @@
 { self, ... }:
 {
   flake.nixosModules.userVariables = {
-    home-manager.users."${self.variables.username}".home = {
-      username = "${self.variables.username}";
-      homeDirectory = "${self.variables.homedir}";
+    home-manager.users."${self.userWillowispll.username}".home = {
+      username = "${self.userWillowispll.username}";
+      homeDirectory = "${self.userWillowispll.homedir}";
     };
 
-    users.users."${self.variables.username}" = {
-      description = "${self.variables.username}";
+    users.users."${self.userWillowispll.username}" = {
+      description = "${self.userWillowispll.username}";
       isNormalUser = true;
       initialPassword = "password";
       extraGroups = [
@@ -18,6 +18,6 @@
   };
 
   flake.homeModules.userVariables = {
-    home.stateVersion = "${self.variables.stateVersion}";
+    home.stateVersion = "${self.userWillowispll.stateVersion}";
   };
 }

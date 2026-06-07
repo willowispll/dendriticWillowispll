@@ -12,7 +12,7 @@
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
-      backupFileExtension = self.variables.backupFileExtension;
+      backupFileExtension = self.userWillowispll.backupFileExtension;
     };
   };
 }

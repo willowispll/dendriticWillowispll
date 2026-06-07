@@ -17,7 +17,7 @@
 
   config.flake.lib = {
     hm = modules: {
-      home-manager.users.${self.variables.username}.imports = modules;
+      home-manager.users.${self.userWillowispll.username}.imports = modules;
     };
 
     mkSystem =
