@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.options.variables = lib.mkOption {
+  flake.options.userWillowispll = lib.mkOption {
     readOnly = true;
     type = lib.types.attrsOf lib.types.unspecified;
     default = {

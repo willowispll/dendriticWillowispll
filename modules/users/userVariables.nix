@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  flake.nixosModules.willowispll = {
+  flake.nixosModules.userVariables = {
     home-manager.users."${self.variables.username}".home = {
       username = "${self.variables.username}";
       homeDirectory = "${self.variables.homedir}";
@@ -17,7 +17,7 @@
     };
   };
 
-  flake.homeModules.willowispll = {
+  flake.homeModules.userVariables = {
     home.stateVersion = "${self.variables.stateVersion}";
   };
 }
