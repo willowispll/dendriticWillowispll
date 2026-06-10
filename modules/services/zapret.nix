@@ -3,7 +3,7 @@
   flake.nixosModules.zapret = {
     imports = [ inputs.zapret.nixosModules.default ];
     services.zapret-discord-youtube = {
-      enable = false;
+      enable = true;
       configName = "general(ALT11)";
     };
   };
