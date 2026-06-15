@@ -31,7 +31,6 @@ in
 
       #services
       ly
-      tailscale
       zapret
     ];
 
@@ -41,12 +40,10 @@ in
 
       #programs
       anki
-      foliate
       glide
       helix
       kitty
       nixcord
-      obs
       obsidian
       spicetify
       zed
