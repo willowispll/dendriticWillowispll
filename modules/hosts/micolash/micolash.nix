@@ -31,7 +31,6 @@ in
 
       #services
       ly
-      zapret
     ];
 
     homeModules = with self.homeModules; [
