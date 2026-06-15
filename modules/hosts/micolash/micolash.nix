@@ -19,6 +19,7 @@ in
 
       #featuresModules
       homeManager
+      nix
       removed
       systemPackages
 
@@ -44,6 +45,7 @@ in
       kitty
       nixcord
       obsidian
+      onlyoffice
       spicetify
       zed
 
