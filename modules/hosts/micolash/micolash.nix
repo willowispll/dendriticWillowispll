@@ -22,8 +22,9 @@ in
       nix
       removed
       systemPackages
+      xdg
 
-      #niri
+      #wayland
       niri
 
       #programs
@@ -57,7 +58,7 @@ in
       nh
       xdg
 
-      #niri
+      #wayland
       waybar
       fuzzel
       mako

@@ -6,10 +6,10 @@
     programs.nixcord = {
       enable = true;
       discord = {
-        enable = false;
+        enable = true;
         vencord.enable = true;
       };
-      vesktop.enable = true;
+      vesktop.enable = false;
 
       config = {
         themeLinks = [

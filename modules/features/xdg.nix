@@ -4,18 +4,20 @@
     {
       xdg.portal = {
         enable = true;
+
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-wlr
+          xdg-desktop-portal-gtk
+        ];
+
         config = {
-          common = {
-            default = [ "gnome" ];
-          };
           niri = {
-            default = [ "gnome;gtk" ];
+            default = [ "gtk" ];
+
+            "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+            "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
           };
         };
-        extraPortals = [
-          pkgs.xdg-desktop-portal-gnome
-          pkgs.xdg-desktop-portal-gtk
-        ];
       };
     };
 }
