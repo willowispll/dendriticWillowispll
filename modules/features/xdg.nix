@@ -1,6 +1,6 @@
 {
   flake.nixosModules.xdg =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       xdg.portal = {
         enable = true;
@@ -11,7 +11,7 @@
         ];
 
         config = {
-          niri = {
+          niri = lib.mkForce {
             default = [ "gtk" ];
 
             "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
