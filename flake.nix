@@ -6,8 +6,8 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
-    zapret = {
-      url = "github:kartavkun/zapret-discord-youtube";
+    oxwm = {
+      url = "github:tonybanters/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -32,6 +32,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    zapret = {
+      url = "github:kartavkun/zapret-discord-youtube";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     vtubfetch = {
       url = "github:Willowispll/vtubfetch";
       inputs.nixpkgs.follows = "nixpkgs";
