@@ -7,6 +7,7 @@
       enable = true;
       discord = {
         enable = true;
+        openASAR.enable = false;
         vencord.enable = true;
       };
       vesktop.enable = false;
