@@ -13,9 +13,9 @@ in
       userVariables
 
       #hostModules
+      micolashBoot
       micolashConfiguration
       micolashHardware
-      lanzaboote
 
       #featuresModules
       homeManager
