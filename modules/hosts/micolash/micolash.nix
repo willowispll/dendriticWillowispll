@@ -20,7 +20,9 @@ in
       #featuresModules
       homeManager
       nix
+      nixpkgs
       removed
+      specialisation
       systemPackages
       xdg
 

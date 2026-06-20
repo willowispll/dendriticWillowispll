@@ -34,7 +34,6 @@
       LC_TIME = "en_US.UTF-8";
     };
 
-    nixpkgs.config.allowUnfree = true;
     system.stateVersion = "25.05";
   };
 }

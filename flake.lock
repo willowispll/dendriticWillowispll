@@ -68,6 +68,21 @@
         "type": "github"
       }
     },
+    "finix": {
+      "locked": {
+        "lastModified": 1781825265,
+        "narHash": "sha256-UcDK/qM7ynsfTYV6IlPfWNdAfF0GNTOUl1KyKwD07G4=",
+        "owner": "finix-community",
+        "repo": "finix",
+        "rev": "f118868229317e9d98d4e3dd55fe63f6115f0e4e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "finix-community",
+        "repo": "finix",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -290,16 +305,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1781577229,
-        "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
-        "owner": "nixos",
+        "lastModified": 1781657188,
+        "narHash": "sha256-gprMwHFnhGnao85GgLnYZCWM7Si1VqGoBtIzIShyIOQ=",
+        "owner": "aanderse",
         "repo": "nixpkgs",
-        "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
+        "rev": "9a1b1419be271c8ffc6badc5df51c2464d969ee2",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
+        "owner": "aanderse",
+        "ref": "nixos/specialisation",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -397,6 +412,7 @@
     },
     "root": {
       "inputs": {
+        "finix": "finix",
         "flake-parts": "flake-parts",
         "glide": "glide",
         "home-manager": "home-manager_2",

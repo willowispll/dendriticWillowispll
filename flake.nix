@@ -2,9 +2,11 @@
   description = "Willowispll's dendritic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:aanderse/nixpkgs?ref=nixos/specialisation";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
+
+    finix.url = "github:finix-community/finix";
 
     oxwm = {
       url = "github:tonybanters/oxwm";
