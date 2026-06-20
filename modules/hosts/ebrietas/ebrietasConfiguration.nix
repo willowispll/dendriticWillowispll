@@ -59,17 +59,13 @@
         password = "$6$zjIM/S19XP5fI5Yl$kMieQUOuAXHTYi/z/LAiIFf/YPqRAaEGhqi.oB1Y/s1ANJlKJmizjbk4wMMveKewMvMMftVI6mE/1pLxRxsK10";
       };
 
-      # List packages installed in system profile. To search, run:
-      # $ nix search wget
       environment.systemPackages = with pkgs; [
         fastfetch
         helix
-        wget
         git
         nixos-rebuild-ng
         iputils
         iproute2
-        kitty
         nh
       ];
     };

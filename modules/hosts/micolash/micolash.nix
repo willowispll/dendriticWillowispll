@@ -4,10 +4,6 @@ let
 in
 {
   flake.nixosConfigurations.micolash = mkSystem {
-    configuration = {
-      system = "x86_64-linux";
-    };
-
     nixosModules = with self.nixosModules; [
       #userModules
       userVariables

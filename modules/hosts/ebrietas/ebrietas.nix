@@ -9,6 +9,7 @@ in
       ebrietasHardware
       ebrietasConfiguration
       nixpkgs
+
       inputs.finix.nixosModules.bash
       inputs.finix.nixosModules.sudo
       inputs.finix.nixosModules.dhcpcd
@@ -17,6 +18,7 @@ in
       inputs.finix.nixosModules.polkit
       inputs.finix.nixosModules.sysklogd
       inputs.finix.nixosModules.nano
+      inputs.finix.nixosModules.getty
     ];
   };
 }
