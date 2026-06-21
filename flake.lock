@@ -83,6 +83,22 @@
         "type": "github"
       }
     },
+    "finix-community-modules": {
+      "locked": {
+        "lastModified": 1781987104,
+        "narHash": "sha256-e8CwsR9qusm4a7YR67IFlf1gkh3G61Thh2z2xeiUrvs=",
+        "owner": "willowispll",
+        "repo": "community-modules",
+        "rev": "141f0ffd9ba407fdd0c0338276ddd773a5bbdeda",
+        "type": "github"
+      },
+      "original": {
+        "owner": "willowispll",
+        "ref": "profiles",
+        "repo": "community-modules",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -413,6 +429,7 @@
     "root": {
       "inputs": {
         "finix": "finix",
+        "finix-community-modules": "finix-community-modules",
         "flake-parts": "flake-parts",
         "glide": "glide",
         "home-manager": "home-manager_2",

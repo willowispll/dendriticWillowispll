@@ -7,6 +7,7 @@
     import-tree.url = "github:vic/import-tree";
 
     finix.url = "github:finix-community/finix";
+    finix-community-modules.url = "github:willowispll/community-modules/profiles";
 
     oxwm = {
       url = "github:tonybanters/oxwm";
