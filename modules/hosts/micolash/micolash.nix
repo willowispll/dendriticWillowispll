@@ -16,21 +16,22 @@ in
       #featuresModules
       homeManager
       nix
-      nixpkgs
       removed
       specialisation
       systemPackages
       xdg
 
-      #wayland
-      niri
+      #sharedModules
+      nixpkgs
 
-      #programs
-      amnezia
-      steam
+      #nixosPrograms
+      nixosProgramsAmnezia
+      nixosProgramsNiri
+      nixosProgramsSteam
+      nixosProgramsXwayland
 
-      #services
-      ly
+      #nixosServices
+      nixosServicesLy
     ];
 
     homeModules = with self.homeModules; [
@@ -39,6 +40,7 @@ in
 
       #programs
       anki
+      fuzzel
       glide
       helix
       kitty
@@ -46,7 +48,11 @@ in
       obsidian
       onlyoffice
       spicetify
+      waybar
       zed
+
+      #services
+      mako
 
       #utils
       bash
@@ -55,11 +61,6 @@ in
       git
       nh
       xdg
-
-      #wayland
-      waybar
-      fuzzel
-      mako
 
       #stylix
       stylix

@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.nixosModules.zapret = {
+  flake.nixosModules.nixosServicesZapret = {
     imports = [ inputs.zapret.nixosModules.default ];
     services.zapret-discord-youtube = {
       enable = true;

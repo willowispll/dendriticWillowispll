@@ -15,7 +15,7 @@ in
       ebrietasTime
       ebrietasUser
 
-      #featuresModules
+      #sharedModules
       nixpkgs
 
       #finixModules
