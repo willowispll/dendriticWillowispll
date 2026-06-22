@@ -19,7 +19,7 @@ in
 
       #featuresModules
       homeManager
-      nix
+      nixLSP
       removed
       systemPackages
       xdg

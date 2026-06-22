@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.nix =
+  flake.nixosModules.nixLSP =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
