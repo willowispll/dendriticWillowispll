@@ -7,7 +7,7 @@
 
       profiles.minimal = {
         enable = true;
-        deviceManager = "udev";
+        deviceManager = "keventd";
         withFlakes = true;
       };
 
