@@ -6,19 +6,30 @@ in
   flake.nixosConfigurations.ebrietas = finixSystem {
     inherit (inputs.nixpkgs) lib;
     modules = with self.nixosModules; [
+      #hostModules
       ebrietasBoot
-      ebrietasConfiguration
       ebrietasFileSystems
       ebrietasFinit
       ebrietasHardware
+      ebrietasNetworking
+      ebrietasTime
       ebrietasUser
 
+      #featuresModules
       nixpkgs
-      inputs.finix.nixosModules.nano
-      inputs.finix.nixosModules.sudo
-      inputs.finix.nixosModules.iwd
 
-      inputs.finix-community-modules.nixosModules.minimal
+      #finixModules
+      finixPackages
+
+      #finixProfiles
+      finixProfilesMinimal
+
+      #finixPrograms
+      finixProgramsSudo
+
+      #finixServices
+      finixServicesDbus
+      finixServicesSeatd
     ];
   };
 }
