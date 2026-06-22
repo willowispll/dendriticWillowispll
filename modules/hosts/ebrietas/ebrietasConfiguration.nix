@@ -14,11 +14,11 @@
       programs = {
         nano.enable = true;
         sudo.enable = true;
-        iwd.enable = true;
-        polkit.enable = true;
       };
 
       services.seatd.enable = true;
+      services.iwd.enable = true;
+      services.dbus.enable = true;
 
       networking.hostName = "ebrietas";
 
