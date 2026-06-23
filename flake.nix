@@ -1,19 +1,23 @@
 {
-  description = "Willowispll's dendritic flake";
+  description = "Willowispll's nixos+finix dendritic flake";
 
   inputs = {
+    #flakeInputs
     nixpkgs.url = "github:aanderse/nixpkgs?ref=nixos/specialisation";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
+    #finixInputs
     finix.url = "github:finix-community/finix";
-    finix-community-modules.url = "github:willowispll/community-modules/profiles";
+    finix-community-modules.url = "github:finix-community/community-modules";
 
+    #wmInputs
     oxwm = {
       url = "github:tonybanters/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    #homeInputs
     glide = {
       url = "github:glide-browser/glide.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +39,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    #miscInputs
     zapret = {
       url = "github:kartavkun/zapret-discord-youtube";
       inputs.nixpkgs.follows = "nixpkgs";
