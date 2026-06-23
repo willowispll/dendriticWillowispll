@@ -10,8 +10,12 @@ in
 
       #hostModules
       micolashBoot
-      micolashConfiguration
       micolashHardware
+      micolashLocale
+      micolashNetworking
+      micolashNix
+      micolashStateVersion
+      micolashTime
 
       #nixosFeatures
       homeManager
