@@ -13,15 +13,15 @@ in
       micolashConfiguration
       micolashHardware
 
-      #featuresModules
+      #nixosFeatures
       homeManager
-      nix
       removed
       specialisation
       systemPackages
       xdg
 
       #sharedModules
+      nix
       nixpkgs
 
       #nixosPrograms
@@ -40,10 +40,14 @@ in
 
       #programs
       anki
+      bash
+      fastfetch
       fuzzel
+      git
       glide
       helix
       kitty
+      nh
       nixcord
       obsidian
       onlyoffice
@@ -55,11 +59,7 @@ in
       mako
 
       #utils
-      bash
-      fastfetch
       fontconfig
-      git
-      nh
       xdg
 
       #stylix
