@@ -22,18 +22,27 @@
 
     mkSystem =
       {
-        nixosModules,
+        modules,
         homeModules ? [ ],
         configuration ? { },
+        finix ? false,
       }:
       let
-        nixosWithDefault = nixosModules ++ [ self.nixosModules.default ];
-        homeWithDefault = homeModules ++ [ self.homeModules.default ];
+        homeManaged = homeModules != [ ];
+        homeModulesExpr = lib.optional homeManaged (self.lib.hm homeModules);
       in
-      inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = nixosWithDefault ++ lib.optional (homeWithDefault != [ ]) (self.lib.hm homeWithDefault);
-      }
-      // configuration;
+      if finix then
+        inputs.finix.lib.finixSystem {
+          inherit (inputs.nixpkgs) lib;
+          specialArgs = { inherit inputs; };
+          modules = modules ++ homeModulesExpr;
+        }
+        // configuration
+      else
+        inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = modules ++ [ self.nixosModules.default ] ++ homeModulesExpr;
+        }
+        // configuration;
   };
 }

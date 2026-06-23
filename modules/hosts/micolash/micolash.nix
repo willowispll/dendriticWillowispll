@@ -4,7 +4,7 @@ let
 in
 {
   flake.nixosConfigurations.micolash = mkSystem {
-    nixosModules = with self.nixosModules; [
+    modules = with self.nixosModules; [
       #userModules
       userVariables
 

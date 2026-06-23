@@ -1,10 +1,11 @@
-{ self, inputs, ... }:
+{ self, ... }:
 let
-  inherit (inputs.finix.lib) finixSystem;
+  inherit (self.lib) mkSystem;
 in
 {
-  flake.nixosConfigurations.ebrietas = finixSystem {
-    inherit (inputs.nixpkgs) lib;
+  flake.nixosConfigurations.ebrietas = mkSystem {
+    finix = true;
+
     modules = with self.nixosModules; [
       #hostModules
       ebrietasBoot

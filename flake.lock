@@ -85,16 +85,15 @@
     },
     "finix-community-modules": {
       "locked": {
-        "lastModified": 1781987104,
-        "narHash": "sha256-e8CwsR9qusm4a7YR67IFlf1gkh3G61Thh2z2xeiUrvs=",
-        "owner": "willowispll",
+        "lastModified": 1782072523,
+        "narHash": "sha256-38exCpEkCa8FUXjodLuxQrVUEyDJ+IO1S9kVSsXzkUE=",
+        "owner": "finix-community",
         "repo": "community-modules",
-        "rev": "141f0ffd9ba407fdd0c0338276ddd773a5bbdeda",
+        "rev": "b81dd57df82d320abf6bc71bd8b9519930aadb9f",
         "type": "github"
       },
       "original": {
-        "owner": "willowispll",
-        "ref": "profiles",
+        "owner": "finix-community",
         "repo": "community-modules",
         "type": "github"
       }
