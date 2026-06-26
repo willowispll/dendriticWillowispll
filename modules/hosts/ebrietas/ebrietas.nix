@@ -22,14 +22,20 @@ in
       #finixModules
       finixPackages
 
+      #finixFeatures
+      finixFeaturesFonts
+
       #finixProfiles
       finixProfilesMinimal
 
       #finixPrograms
+      finixProgramsFastfetch
       finixProgramsSudo
+      finixProgramsXorg
 
       #finixServices
       finixServicesDbus
+      finixServicesLy
       finixServicesSeatd
     ];
   };
