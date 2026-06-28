@@ -15,13 +15,13 @@
         buildInputs = o.buildInputs ++ [ pkgs.util-linuxMinimal.dev ];
 
         postPatch = (o.postPatch or "") + ''
-          substituteInPlace keventd/uevent.c \
-            --replace-fail '"/sbin/modprobe", "modprobe"' '"${pkgs.kmod}/bin/modprobe", "modprobe"' \
-            --replace-fail '"/usr/lib/firmware/' '"/run/current-system/firmware/lib/firmware/'
+           substituteInPlace keventd/uevent.c \
+             --replace-fail '"/sbin/modprobe", "modprobe"' '"${pkgs.kmod}/bin/modprobe", "modprobe"' \
+             --replace-fail '"/usr/lib/firmware/' '"/run/current-system/firmware/lib/firmware/'
 
           substituteInPlace keventd/builtin.c \
-            --replace-fail  '"/lib/udev/hwdb.d"' '"/run/current-system/sw/lib/udev/hwdb.d"' \
-            --replace-fail  '"/usr/share/hwdata/usb.ids"' '"${pkgs.hwdata}/share/hwdata/usb.ids"'
+             --replace-fail  '"/lib/udev/hwdb.d"' '"/run/current-system/sw/lib/udev/hwdb.d"' \
+             --replace-fail  '"/usr/share/hwdata/usb.ids"' '"${pkgs.hwdata}/share/hwdata/usb.ids"'
         '';
       });
     };

@@ -24,18 +24,21 @@ in
 
       #finixFeatures
       finixFeaturesFonts
-
+      finixFeaturesHjem
       #finixProfiles
       finixProfilesMinimal
 
       #finixPrograms
       finixProgramsFastfetch
+      finixProgramsPipewire
+      finixProgramsV2rayn
       finixProgramsSudo
       finixProgramsXorg
 
       #finixServices
       finixServicesDbus
       finixServicesLy
+      finixServicesPolkit
       finixServicesSeatd
     ];
   };

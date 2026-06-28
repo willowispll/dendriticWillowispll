@@ -1,12 +1,12 @@
-{
+{ inputs, ... }: {
   flake.homeModules.zed =
     { pkgs, ... }:
     let
       zed-rpc = pkgs.buildEnv {
         name = "zed-editor";
         paths = [
-          pkgs.zed-editor
-          pkgs.zed-discord-presence
+          inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.zed-editor
+          inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.zed-discord-presence
         ];
       };
     in

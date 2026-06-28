@@ -57,6 +57,7 @@ in
       onlyoffice
       spicetify
       waybar
+      zed
 
       #services
       mako

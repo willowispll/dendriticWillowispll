@@ -7,6 +7,7 @@
         git
         nixos-rebuild-ng
         iproute2
+        iputils
         nh
         oxwm
         st
