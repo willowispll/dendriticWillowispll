@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.ebrietasBoot = {
+  flake.modules.hosts.ebrietas.boot = {
     boot = {
       kernelModules = [ "tun" ];
       kernelParams = [ "loglevel=3" ];

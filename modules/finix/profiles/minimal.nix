@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.nixosModules.finixProfilesMinimal = {
+  flake.modules.finix.profiles.minimal = {
     imports = [ inputs.finix-community-modules.nixosModules.minimal ];
 
     profiles.minimal = {

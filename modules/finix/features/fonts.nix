@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.finixFeaturesFonts = { pkgs, ... }: {
+  flake.modules.finix.features.fonts = { pkgs, ... }: {
     fonts = {
       enableDefaultPackages = true;
       packages = with pkgs; [
@@ -8,6 +8,7 @@
 
       fontconfig = {
         enable = true;
+        defaultFonts.monospace = [ "FiraCode Nerd Font Mono" ];
       };
     };
   };

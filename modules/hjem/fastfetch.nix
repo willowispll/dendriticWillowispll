@@ -1,5 +1,5 @@
 {
-  flake.modules.hjem.fastfetch = { lib, ... }: {
+  flake.hjemModules.fastfetch = { lib, ... }: {
     xdg.config.files."fastfetch/config.jsonc" = {
       generator = lib.generators.toJSON { };
       value = {

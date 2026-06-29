@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.nixosModules.finixServicesLy = { lib, ... }: {
+  flake.modules.finix.services.ly = { lib, ... }: {
     imports = [ inputs.finix.nixosModules.ly ];
     services.ly = {
       enable = true;

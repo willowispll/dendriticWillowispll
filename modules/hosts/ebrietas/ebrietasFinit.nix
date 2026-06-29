@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.ebrietasFinit = { pkgs, ... }: {
+  flake.modules.hosts.ebrietas.finit = { pkgs, ... }: {
     finit = {
       runlevel = 3;
 

@@ -27,6 +27,7 @@ in
       #sharedModules
       nix
       nixpkgs
+      self.modules.shared.nvf.nvf
 
       #nixosPrograms
       nixosProgramsAmnezia

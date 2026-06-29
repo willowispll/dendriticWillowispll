@@ -12,12 +12,6 @@
     finix.url = "github:finix-community/finix";
     finix-community-modules.url = "github:finix-community/community-modules";
 
-    #wmInputs
-    oxwm = {
-      url = "github:tonybanters/oxwm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     #homeInputs
     glide = {
       url = "github:glide-browser/glide.nix";
@@ -43,6 +37,12 @@
     #hjemInputs
     hjem = {
       url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #nvfInputs
+    nvf = {
+      url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

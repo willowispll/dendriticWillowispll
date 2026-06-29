@@ -6,40 +6,48 @@ in
   flake.nixosConfigurations.ebrietas = mkSystem {
     finix = true;
 
-    modules = with self.nixosModules; [
+    modules = [
       #hostModules
-      ebrietasBoot
-      ebrietasFileSystems
-      ebrietasFinit
-      ebrietasHardware
-      ebrietasNetworking
-      ebrietasTime
-      ebrietasUser
+      self.modules.hosts.ebrietas.boot
+      self.modules.hosts.ebrietas.fileSystems
+      self.modules.hosts.ebrietas.finit
+      self.modules.hosts.ebrietas.hardware
+      self.modules.hosts.ebrietas.networking
+      self.modules.hosts.ebrietas.time
+      self.modules.hosts.ebrietas.user
+
+      #nvfModules
+      self.modules.shared.nvf.nvf
 
       #sharedModules
-      nixpkgs
+      self.nixosModules.nixpkgs
 
-      #finixModules
-      finixPackages
+      #finixEnvironment
+      self.modules.finix.environment.default
 
       #finixFeatures
-      finixFeaturesFonts
-      finixFeaturesHjem
+      self.modules.finix.features.fonts
+      self.modules.finix.features.hjem
+      self.modules.finix.features.packages
+
       #finixProfiles
-      finixProfilesMinimal
+      self.modules.finix.profiles.minimal
 
       #finixPrograms
-      finixProgramsFastfetch
-      finixProgramsPipewire
-      finixProgramsV2rayn
-      finixProgramsSudo
-      finixProgramsXorg
+      self.modules.finix.programs.pipewire
+      self.modules.finix.programs.sudo
+      self.modules.finix.programs.v2rayn
+      self.modules.finix.programs.xorg
 
       #finixServices
-      finixServicesDbus
-      finixServicesLy
-      finixServicesPolkit
-      finixServicesSeatd
+      self.modules.finix.services.dbus
+      self.modules.finix.services.ly
+      self.modules.finix.services.polkit
+      self.modules.finix.services.seatd
+    ];
+
+    hjemModules = [
+      self.hjemModules.fastfetch
     ];
   };
 }

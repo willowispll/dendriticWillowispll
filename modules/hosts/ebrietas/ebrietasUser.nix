@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.ebrietasUser = {
+  flake.modules.hosts.ebrietas.user = {
     users.users.willowispll = {
       isNormalUser = true;
       description = "willowispll's user configuration";
