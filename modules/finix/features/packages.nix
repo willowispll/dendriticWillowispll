@@ -12,6 +12,7 @@
         st
         inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.fastfetch
         rofi
+        discord
       ];
     };
 }

@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.modules.shared.nvf.nvf = {
+  flake.modules.shared.programs.nvf = {
     imports = [ inputs.nvf.nixosModules.default ];
     programs.nvf = {
       enable = true;
@@ -20,7 +20,7 @@
           };
 
           git.enable = true;
-          
+
           mini = {
             statusline.enable = true;
             pick.enable = true;
@@ -31,6 +31,7 @@
             starter.enable = true;
           };
 
+          presence.neocord.enable = true;
           autocomplete.nvim-cmp.enable = true;
           filetree.neo-tree = {
             enable = true;
@@ -40,7 +41,7 @@
               };
             };
           };
-
+         
           languages = {
             enableLSP = true;
             enableTreesitter = true;

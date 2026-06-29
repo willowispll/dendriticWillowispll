@@ -16,11 +16,12 @@ in
       self.modules.hosts.ebrietas.time
       self.modules.hosts.ebrietas.user
 
-      #nvfModules
-      self.modules.shared.nvf.nvf
+      #sharedFeatures
+      self.modules.shared.features.nix
+      self.modules.shared.features.nixpkgs
 
-      #sharedModules
-      self.nixosModules.nixpkgs
+      #sharedPrograms
+      self.modules.shared.programs.nvf
 
       #finixEnvironment
       self.modules.finix.environment.default
@@ -29,6 +30,7 @@ in
       self.modules.finix.features.fonts
       self.modules.finix.features.hjem
       self.modules.finix.features.packages
+      self.modules.finix.features.xdg
 
       #finixProfiles
       self.modules.finix.profiles.minimal

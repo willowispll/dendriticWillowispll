@@ -25,9 +25,9 @@ in
       xdg
 
       #sharedModules
-      nix
-      nixpkgs
-      self.modules.shared.nvf.nvf
+      self.modules.shared.features.nix
+      self.modules.shared.features.nixpkgs
+      self.modules.shared.programs.nvf
 
       #nixosPrograms
       nixosProgramsAmnezia
