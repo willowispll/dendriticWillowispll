@@ -8,11 +8,17 @@
         iproute2
         iputils
         nh
+        kitty
         oxwm
-        st
         inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.fastfetch
+        inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
         rofi
         discord
+        picom
+        pavucontrol
+        nitrogen
+        steam
+        xrandr
       ];
     };
 }

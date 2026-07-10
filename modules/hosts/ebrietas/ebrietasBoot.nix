@@ -2,7 +2,7 @@
   flake.modules.hosts.ebrietas.boot = {
     boot = {
       kernelModules = [ "tun" ];
-      kernelParams = [ "loglevel=3" ];
+      kernelParams = [ "loglevel=5" ];
       initrd.availableKernelModules = [
         "xhci_pci"
         "ahci"

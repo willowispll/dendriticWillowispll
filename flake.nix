@@ -47,6 +47,10 @@
     };
 
     #miscInputs
+    basix = {
+      url = "github:NotAShelf/Basix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zapret = {
       url = "github:kartavkun/zapret-discord-youtube";
       inputs.nixpkgs.follows = "nixpkgs";

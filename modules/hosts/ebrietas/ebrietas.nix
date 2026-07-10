@@ -50,6 +50,7 @@ in
 
     hjemModules = [
       self.hjemModules.fastfetch
+      self.hjemModules.kitty
     ];
   };
 }
