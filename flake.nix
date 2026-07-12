@@ -51,14 +51,6 @@
       url = "github:NotAShelf/Basix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zapret = {
-      url = "github:kartavkun/zapret-discord-youtube";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    vtubfetch = {
-      url = "github:Willowispll/vtubfetch";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);

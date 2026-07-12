@@ -41,7 +41,7 @@
               };
             };
           };
-         
+
           languages = {
             enableLSP = true;
             enableTreesitter = true;

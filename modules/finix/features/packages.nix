@@ -19,6 +19,8 @@
         nitrogen
         steam
         xrandr
+        scrot
+        btop
       ];
     };
 }

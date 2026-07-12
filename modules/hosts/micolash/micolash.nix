@@ -5,9 +5,6 @@ in
 {
   flake.nixosConfigurations.micolash = mkSystem {
     modules = with self.nixosModules; [
-      #userModules
-      userVariables
-
       #hostModules
       micolashBoot
       micolashHardware
@@ -16,9 +13,10 @@ in
       micolashNix
       micolashStateVersion
       micolashTime
+      self.modules.hosts.micolash.user
 
       #nixosFeatures
-      homeManager
+      self.modules.nixos.features.homeManager
       removed
       specialisation
       systemPackages
@@ -40,9 +38,6 @@ in
     ];
 
     homeModules = with self.homeModules; [
-      #userModules
-      userVariables
-
       #programs
       anki
       bash
@@ -50,7 +45,6 @@ in
       fuzzel
       git
       glide
-      helix
       kitty
       nh
       nixcord
