@@ -15,8 +15,9 @@ in
       micolashTime
       self.modules.hosts.micolash.user
 
-      #nixosFeatures
-      self.modules.nixos.features.homeManager
+      #featuresModules
+      homeManager
+      nixLSP
       removed
       specialisation
       systemPackages
