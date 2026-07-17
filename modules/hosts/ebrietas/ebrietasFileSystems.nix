@@ -1,21 +1,22 @@
 {
-  flake.modules.hosts.ebrietas.fileSystems = { lib, ... }: {
-    fileSystems."/" = lib.mkForce {
-      device = "/dev/disk/by-uuid/603fbd3f-f970-4eb0-8f7d-4b826b145429";
+  flake.modules.hosts.ebrietas.fileSystems = {
+
+    fileSystems."/" = {
+      device = "/dev/disk/by-uuid/21c154e1-71a6-4452-a1d8-214732c2ad73";
       fsType = "ext4";
     };
+
     fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/DDA1-534A";
+      device = "/dev/disk/by-uuid/5D89-AF94";
       fsType = "vfat";
       options = [
         "fmask=0077"
         "dmask=0077"
       ];
     };
-    fileSystems."/nix" = {
-      device = "/dev/disk/by-uuid/9cbe0bcb-da94-477c-86a9-bb4b4d50bf10";
-      fsType = "ext4";
-      options = [ "X-mount.subdir=nix" ];
-    };
+
+    swapDevices = [
+      { device = "/dev/disk/by-uuid/895848b5-8edb-46a0-be7f-d602b7ab9bc8"; }
+    ];
   };
 }

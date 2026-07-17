@@ -3,8 +3,7 @@
 
   inputs = {
     #flakeInputs
-    nixpkgs.url = "github:aanderse/nixpkgs?ref=nixos/specialisation";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 

@@ -3,7 +3,7 @@
     readOnly = true;
     type = lib.types.attrsOf lib.types.str;
     default = {
-      base16 = "woodland";
+      base16 = "grayscale-dark";
       fontFamily = "FiraCode Nerd Font Mono";
     };
   };

@@ -8,9 +8,9 @@
         iproute2
         iputils
         nh
-        kitty
+        fastfetch
         oxwm
-        inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.fastfetch
+        kitty
         inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
         rofi
         discord
@@ -21,6 +21,7 @@
         xrandr
         scrot
         btop
+        gamescope
       ];
     };
 }

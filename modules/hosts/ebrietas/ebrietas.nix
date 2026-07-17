@@ -24,7 +24,7 @@ in
       self.modules.shared.programs.nvf
 
       #finixEnvironment
-      self.modules.finix.environment.default
+      #self.modules.finix.environment.default
 
       #finixFeatures
       self.modules.finix.features.fonts
@@ -36,6 +36,7 @@ in
       self.modules.finix.profiles.minimal
 
       #finixPrograms
+      self.modules.finix.programs.limine
       self.modules.finix.programs.pipewire
       self.modules.finix.programs.sudo
       self.modules.finix.programs.v2rayn

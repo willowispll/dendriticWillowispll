@@ -1,8 +1,7 @@
-{ inputs, ... }: {
+{
   flake.homeModules.fastfetch = { pkgs, ... }: {
     programs.fastfetch = {
       enable = true;
-      package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.fastfetch;
 
       settings = {
         logo = {
