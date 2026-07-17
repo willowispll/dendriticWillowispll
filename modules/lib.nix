@@ -5,35 +5,61 @@
   ...
 }:
 {
-  options.flake.lib = lib.mkOption {
-    type = lib.types.attrsOf lib.types.unspecified;
-    default = { };
-  };
-
-  config.flake = {
-    nixosModules.default = { };
-    homeModules.default = { };
+  options.flake = {
+    homeModules = lib.mkOption {
+      type = with lib.types; lazyAttrsOf deferredModule;
+      default = { };
+    };
+    hjemModules = lib.mkOption {
+      type = with lib.types; lazyAttrsOf deferredModule;
+      default = { };
+    };
+    modules = lib.mkOption {
+      type = with lib.types; lazyAttrsOf (lazyAttrsOf (lazyAttrsOf deferredModule));
+      default = { };
+    };
+    lib = lib.mkOption {
+      type = lib.types.attrsOf lib.types.raw;
+      default = { };
+    };
   };
 
   config.flake.lib = {
-    hm = modules: {
+    hmWrapper = modules: {
       home-manager.users.${self.userWillowispll.username}.imports = modules;
+    };
+    hjemWrapper = modules: {
+      hjem.users.${self.userWillowispll.username}.imports = modules;
     };
 
     mkSystem =
       {
-        nixosModules,
+        modules,
         homeModules ? [ ],
+        hjemModules ? [ ],
         configuration ? { },
+        finix ? false,
       }:
       let
-        nixosWithDefault = nixosModules ++ [ self.nixosModules.default ];
-        homeWithDefault = homeModules ++ [ self.homeModules.default ];
-      in
-      inputs.nixpkgs.lib.nixosSystem {
+        baseModules =
+          modules
+          ++ lib.optional (homeModules != [ ]) (self.lib.hmWrapper homeModules)
+          ++ lib.optional (hjemModules != [ ]) (self.lib.hjemWrapper hjemModules);
         specialArgs = { inherit inputs; };
-        modules = nixosWithDefault ++ lib.optional (homeWithDefault != [ ]) (self.lib.hm homeWithDefault);
-      }
+      in
+      (
+        if finix then
+          inputs.finix.lib.finixSystem {
+            inherit (inputs.nixpkgs) lib;
+            inherit specialArgs;
+            modules = baseModules;
+          }
+        else
+          inputs.nixpkgs.lib.nixosSystem {
+            inherit specialArgs;
+            modules = baseModules;
+          }
+      )
       // configuration;
   };
 }

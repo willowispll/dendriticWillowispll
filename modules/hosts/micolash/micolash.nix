@@ -4,64 +4,63 @@ let
 in
 {
   flake.nixosConfigurations.micolash = mkSystem {
-    configuration = {
-      system = "x86_64-linux";
-    };
-
-    nixosModules = with self.nixosModules; [
-      #userModules
-      userVariables
-
+    modules = with self.nixosModules; [
       #hostModules
       micolashBoot
-      micolashConfiguration
       micolashHardware
+      micolashLocale
+      micolashNetworking
+      micolashNix
+      micolashStateVersion
+      micolashTime
+      self.modules.hosts.micolash.user
 
       #featuresModules
       homeManager
       nixLSP
       removed
+      specialisation
       systemPackages
       xdg
 
-      #wayland
-      niri
+      #sharedModules
+      self.modules.shared.features.nix
+      self.modules.shared.features.nixpkgs
+      self.modules.shared.programs.nvf
 
-      #programs
-      amnezia
-      steam
+      #nixosPrograms
+      nixosProgramsAmnezia
+      nixosProgramsNiri
+      nixosProgramsSteam
+      nixosProgramsXwayland
 
-      #services
-      ly
+      #nixosServices
+      nixosServicesLy
     ];
 
     homeModules = with self.homeModules; [
-      #userModules
-      userVariables
-
       #programs
       anki
+      bash
+      fastfetch
+      fuzzel
+      git
       glide
-      helix
       kitty
+      nh
       nixcord
       obsidian
       onlyoffice
       spicetify
+      waybar
       zed
 
-      #utils
-      bash
-      fastfetch
-      fontconfig
-      git
-      nh
-      xdg
-
-      #wayland
-      waybar
-      fuzzel
+      #services
       mako
+
+      #utils
+      fontconfig
+      xdg
 
       #stylix
       stylix

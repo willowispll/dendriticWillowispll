@@ -1,16 +1,17 @@
 {
-  description = "Willowispll's dendritic flake";
+  description = "Willowispll's nixos+finix dendritic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    #flakeInputs
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
-    oxwm = {
-      url = "github:tonybanters/oxwm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #finixInputs
+    finix.url = "github:finix-community/finix";
+    finix-community-modules.url = "github:finix-community/community-modules";
 
+    #homeInputs
     glide = {
       url = "github:glide-browser/glide.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,12 +33,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zapret = {
-      url = "github:kartavkun/zapret-discord-youtube";
+    #hjemInputs
+    hjem = {
+      url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vtubfetch = {
-      url = "github:Willowispll/vtubfetch";
+
+    #nvfInputs
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #miscInputs
+    basix = {
+      url = "github:NotAShelf/Basix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
