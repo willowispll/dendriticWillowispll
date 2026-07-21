@@ -1,5 +1,4 @@
-{ lib, ... }:
-{
+{lib, ...}: {
   flake.options.userWillowispll = lib.mkOption {
     readOnly = true;
     type = lib.types.attrsOf lib.types.unspecified;

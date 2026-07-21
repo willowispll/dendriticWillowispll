@@ -1,5 +1,5 @@
 {
-  flake.modules.hosts.ebrietas.finit = { pkgs, ... }: {
+  flake.modules.hosts.ebrietas.finit = {pkgs, ...}: {
     finit = {
       runlevel = 3;
 
@@ -12,17 +12,19 @@
           sha256 = "sha256-SJTnrcgRx/M07pOQAnm+LeiXSq9YGCON2yHLaKCMyJw=";
         };
 
-        buildInputs = o.buildInputs ++ [ pkgs.util-linuxMinimal.dev ];
+        buildInputs = o.buildInputs ++ [pkgs.util-linuxMinimal.dev];
 
-        postPatch = (o.postPatch or "") + ''
-           substituteInPlace keventd/uevent.c \
-             --replace-fail '"/sbin/modprobe", "modprobe"' '"${pkgs.kmod}/bin/modprobe", "modprobe"' \
-             --replace-fail '"/usr/lib/firmware/' '"/run/current-system/firmware/lib/firmware/'
+        postPatch =
+          (o.postPatch or "")
+          + ''
+             substituteInPlace keventd/uevent.c \
+               --replace-fail '"/sbin/modprobe", "modprobe"' '"${pkgs.kmod}/bin/modprobe", "modprobe"' \
+               --replace-fail '"/usr/lib/firmware/' '"/run/current-system/firmware/lib/firmware/'
 
-          substituteInPlace keventd/builtin.c \
-             --replace-fail  '"/lib/udev/hwdb.d"' '"/run/current-system/sw/lib/udev/hwdb.d"' \
-             --replace-fail  '"/usr/share/hwdata/usb.ids"' '"${pkgs.hwdata}/share/hwdata/usb.ids"'
-        '';
+            substituteInPlace keventd/builtin.c \
+               --replace-fail  '"/lib/udev/hwdb.d"' '"/run/current-system/sw/lib/udev/hwdb.d"' \
+               --replace-fail  '"/usr/share/hwdata/usb.ids"' '"${pkgs.hwdata}/share/hwdata/usb.ids"'
+          '';
       });
     };
   };

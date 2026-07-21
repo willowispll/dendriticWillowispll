@@ -1,10 +1,10 @@
-{ inputs, ... }: {
+{inputs, ...}: {
   flake.modules.finix.programs.limine = {
-    imports = [ inputs.finix.nixosModules.limine ];
+    imports = [inputs.finix.nixosModules.limine];
     programs.limine = {
       enable = true;
       secureBoot.enable = true;
-      settings.wallpaper = [ ];
+      settings.wallpaper = [];
       extraEntries = ''
         /Windows
           protocol: efi

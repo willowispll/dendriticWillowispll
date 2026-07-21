@@ -1,8 +1,6 @@
-{ self, ... }:
-let
+{self, ...}: let
   inherit (self.lib) mkSystem;
-in
-{
+in {
   flake.nixosConfigurations.ebrietas = mkSystem {
     finix = true;
 
@@ -43,6 +41,7 @@ in
       self.modules.finix.programs.xorg
 
       #finixServices
+      self.modules.finix.services.chronyd
       self.modules.finix.services.dbus
       self.modules.finix.services.ly
       self.modules.finix.services.polkit
@@ -52,6 +51,7 @@ in
     hjemModules = [
       self.hjemModules.fastfetch
       self.hjemModules.kitty
+      self.hjemModules.picom
     ];
   };
 }

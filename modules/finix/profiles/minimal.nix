@@ -1,6 +1,6 @@
-{ inputs, ... }: {
+{inputs, ...}: {
   flake.modules.finix.profiles.minimal = {
-    imports = [ inputs.finix-community-modules.nixosModules.minimal ];
+    imports = [inputs.finix-community-modules.nixosModules.minimal];
 
     profiles.minimal = {
       enable = true;

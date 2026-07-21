@@ -1,4 +1,4 @@
-{ self, ... }: {
+{self, ...}: {
   flake.modules.hosts.ebrietas.user = {
     users.users."${self.userWillowispll.username}" = {
       description = "${self.userWillowispll.username}";

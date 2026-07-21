@@ -1,13 +1,16 @@
-{ self, inputs, ... }: {
-  flake.hjemModules.kitty =
-    let
-      palette = inputs.basix.schemeData.base16.${self.theme.base16}.palette;
-      font_family = "${self.theme.fontFamily}";
-    in
-    { lib, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.hjemModules.kitty = let
+    palette = inputs.basix.schemeData.base16.${self.theme.base16}.palette;
+    font_family = "${self.theme.fontFamily}";
+  in
+    {lib, ...}: {
       xdg.config.files."kitty/kitty.conf" = {
         generator = lib.generators.toKeyValue {
-          mkKeyValue = lib.generators.mkKeyValueDefault { } " ";
+          mkKeyValue = lib.generators.mkKeyValueDefault {} " ";
         };
         value = {
           font_family = font_family;

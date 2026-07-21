@@ -1,8 +1,6 @@
-{ self, ... }:
-let
+{self, ...}: let
   inherit (self.lib) mkSystem;
-in
-{
+in {
   flake.nixosConfigurations.micolash = mkSystem {
     modules = with self.nixosModules; [
       #hostModules
