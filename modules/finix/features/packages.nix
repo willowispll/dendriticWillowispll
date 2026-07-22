@@ -11,13 +11,16 @@
       kitty
       inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
       rofi
-      discord
+      (discord.override {
+        withOpenASAR = true;
+        withVencord = true;
+      })
       picom
       pavucontrol
       nitrogen
       steam
       xrandr
-      scrot
+      maim
       btop
       gamescope
     ];
