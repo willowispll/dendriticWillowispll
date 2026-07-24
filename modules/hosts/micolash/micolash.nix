@@ -14,10 +14,10 @@ in {
       self.modules.hosts.micolash.user
 
       #featuresModules
-      homeManager
+      #homeManager
       nixLSP
       removed
-      specialisation
+      #specialisation
       systemPackages
       xdg
 

@@ -34,6 +34,7 @@ in {
       self.modules.finix.profiles.minimal
 
       #finixPrograms
+      self.modules.finix.programs.coreutils
       self.modules.finix.programs.limine
       self.modules.finix.programs.pipewire
       self.modules.finix.programs.sudo
@@ -52,6 +53,7 @@ in {
       self.hjemModules.fastfetch
       self.hjemModules.kitty
       self.hjemModules.picom
+      self.hjemModules.rofi
     ];
   };
 }
