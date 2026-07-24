@@ -143,7 +143,7 @@
             padding = 5;
             background-color = mkLiteral "@background";
             border = 1;
-            width = 300;
+            width = 600;
           };
 
           mainbox = {
