@@ -1,37 +1,49 @@
-{ self, inputs, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.hjemModules.rofi = let
     palette = inputs.basix.schemeData.base16.${self.theme.base16}.palette;
     font_family = "${self.theme.fontFamily}";
   in
-    { lib, ... }: let
-      mkLiteral = value: { _type = "literal"; inherit value; };
+    {lib, ...}: let
+      mkLiteral = value: {
+        _type = "literal";
+        inherit value;
+      };
       p = builtins.mapAttrs (_: mkLiteral) palette;
 
       mkRasiValue = value:
-        if builtins.isAttrs value && value._type or "" == "literal" then
-          value.value
-        else if builtins.isBool value then
-          if value then "true" else "false"
-        else if builtins.isInt value || builtins.isFloat value then
-          toString value
-        else if builtins.isList value then
-          "[ ${lib.concatMapStringsSep ", " mkRasiValue value} ]"
-        else
-          ''"${toString value}"'';
+        if builtins.isAttrs value && value._type or "" == "literal"
+        then value.value
+        else if builtins.isBool value
+        then
+          if value
+          then "true"
+          else "false"
+        else if builtins.isInt value || builtins.isFloat value
+        then toString value
+        else if builtins.isList value
+        then "[ ${lib.concatMapStringsSep ", " mkRasiValue value} ]"
+        else ''"${toString value}"'';
 
-      mkBlock = name: props:
-        "${name} {\n${lib.concatStringsSep "\n" (lib.mapAttrsToList (k: v: "  ${k}: ${mkRasiValue v};") props)}\n}";
+      mkBlock = name: props: "${name} {\n${lib.concatStringsSep "\n" (lib.mapAttrsToList (k: v: "  ${k}: ${mkRasiValue v};") props)}\n}";
 
-      generator = attrs:
-        let
-          names = builtins.attrNames attrs;
-          sorted = lib.sort (a: b:
-            if a == "configuration" then true
-            else if b == "configuration" then false
-            else a < b
-          ) names;
-        in
-          lib.concatStringsSep "\n" (map (name: mkBlock name attrs.${name}) sorted);
+      generator = attrs: let
+        names = builtins.attrNames attrs;
+        sorted =
+          lib.sort (
+            a: b:
+              if a == "configuration"
+              then true
+              else if b == "configuration"
+              then false
+              else a < b
+          )
+          names;
+      in
+        lib.concatStringsSep "\n" (map (name: mkBlock name attrs.${name}) sorted);
     in {
       xdg.config.files."rofi/config.rasi" = {
         inherit generator;
@@ -214,7 +226,7 @@
             padding = mkLiteral "1px";
             spacing = mkLiteral "0px";
             text-color = mkLiteral "@normal-foreground";
-            children = map mkLiteral [ "prompt" "textbox-prompt-colon" "entry" "num-filtered-rows" "textbox-num-sep" "num-rows" "case-indicator" ];
+            children = map mkLiteral ["prompt" "textbox-prompt-colon" "entry" "num-filtered-rows" "textbox-num-sep" "num-rows" "case-indicator"];
           };
 
           "case-indicator" = {

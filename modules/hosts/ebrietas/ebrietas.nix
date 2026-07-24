@@ -21,9 +21,6 @@ in {
       #sharedPrograms
       self.modules.shared.programs.nvf
 
-      #finixEnvironment
-      #self.modules.finix.environment.default
-
       #finixFeatures
       self.modules.finix.features.fonts
       self.modules.finix.features.hjem

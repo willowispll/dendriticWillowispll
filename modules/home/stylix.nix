@@ -10,14 +10,6 @@
       targets = {
         gtk.enable = true;
         qt.enable = true;
-
-        anki.enable = true;
-        foliate.enable = true;
-        fuzzel.enable = true;
-        obsidian.enable = true;
-        zed.enable = true;
-
-        mako.enable = true;
       };
     };
   };
