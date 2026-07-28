@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.xdg = {
+  flake.modules.nixos.features.xdg = {
     pkgs,
     lib,
     ...

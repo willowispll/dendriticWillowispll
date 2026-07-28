@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.micolashNetworking = {
+  flake.modules.hosts.micolash.networking = {
     networking = {
       hostName = "micolash";
       networkmanager.enable = true;

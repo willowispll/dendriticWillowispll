@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.nixosProgramsAmnezia = {
+  flake.modules.nixos.programs.amnezia = {
     programs.amnezia-vpn.enable = true;
   };
 }

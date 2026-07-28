@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.micolashHardware = {
+  flake.modules.hosts.micolash.hardware = {
     config,
     lib,
     modulesPath,

@@ -2,38 +2,38 @@
   inherit (self.lib) mkSystem;
 in {
   flake.nixosConfigurations.micolash = mkSystem {
-    modules = with self.nixosModules; [
+    modules = [
       #hostModules
-      micolashBoot
-      micolashHardware
-      micolashLocale
-      micolashNetworking
-      micolashNix
-      micolashStateVersion
-      micolashTime
+      self.modules.hosts.micolash.boot
+      self.modules.hosts.micolash.hardware
+      self.modules.hosts.micolash.locale
+      self.modules.hosts.micolash.networking
+      self.modules.hosts.micolash.nix
+      self.modules.hosts.micolash.stateVersion
+      self.modules.hosts.micolash.time
       self.modules.hosts.micolash.user
 
       #featuresModules
       self.modules.nixos.features.homeManager
-      nixLSP
-      removed
+      self.modules.shared.features.nixLSP
+      self.modules.nixos.features.removed
       #specialisation
-      systemPackages
-      xdg
+      self.modules.nixos.features.systemPackages
+      self.modules.nixos.features.xdg
 
       #sharedModules
       self.modules.shared.features.nix
       self.modules.shared.features.nixpkgs
       self.modules.shared.programs.nvf
 
-      #nixosPrograms
-      nixosProgramsAmnezia
-      nixosProgramsNiri
-      nixosProgramsSteam
-      nixosProgramsXwayland
+      #programs
+      self.modules.nixos.programs.amnezia
+      self.modules.nixos.programs.niri
+      self.modules.nixos.programs.steam
+      self.modules.nixos.programs.xwayland
 
-      #nixosServices
-      nixosServicesLy
+      #services
+      self.modules.nixos.services.ly
     ];
 
     homeModules = with self.homeModules; [

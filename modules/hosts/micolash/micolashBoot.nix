@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.micolashBoot = {pkgs, ...}: {
+  flake.modules.hosts.micolash.boot = {pkgs, ...}: {
     boot = {
       loader = {
         limine.enable = true;

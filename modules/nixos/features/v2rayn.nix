@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.v2rayn = {pkgs, ...}: {
+  flake.modules.nixos.features.v2rayn = {pkgs, ...}: {
     environment.systemPackages = [
       pkgs.v2rayn
       pkgs.xray

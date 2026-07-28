@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.removed = {
+  flake.modules.nixos.features.removed = {
     programs.nano.enable = false;
     documentation = {
       enable = false;

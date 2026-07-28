@@ -24,6 +24,7 @@
       btop
       gamescope
       zed-editor
+      prismlauncher
     ];
   };
 }

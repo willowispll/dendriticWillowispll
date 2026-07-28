@@ -50,14 +50,10 @@
                 --replace-fail '{ MODKEY,                       XK_q,      enhancedtogglefloating, {0} },' '{ MODKEY,                       XK_e,      enhancedtogglefloating, {0} },' \
                 --replace-fail '{ Mod1Mask,                     KEY,      tag,            {.ui = 1 << TAG} },' '{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} },'
 
-              # vcompmgr is not part of this configuration, so leave zoom disabled.
-              # Mod+Space is handled by XKB (grp:win_space_toggle), not vxwm.
               substituteInPlace modules.def.h \
                 --replace-fail '#define ZOOM 1' '#define ZOOM 0' \
                 --replace-fail '#define TAG_TO_TAG 1' '#define TAG_TO_TAG 0'
 
-              # Directional focus should cross tiled and pseudo-fullscreen (floating)
-              # windows, but not escape or target real fullscreen windows.
               substituteInPlace modules/directionalfocus/directionalfocus.c \
                 --replace-fail 'if (!s)' 'if (!s || s->isfullscreen)' \
                 --replace-fail 'int isfloating = s->isfloating;' '/* Allow focus across floating and tiled windows. */' \
@@ -102,7 +98,7 @@
       [Desktop Entry]
       Name=vxwm
       Comment=Versatile X Window Manager
-      Exec=${vxwmSession}
+      Exec=${pkgs.dbus}/bin/dbus-run-session -- ${vxwmSession}
       TryExec=${vxwm}/bin/vxwm
       Type=Application
       DesktopNames=vxwm

@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.micolashTime = {
+  flake.modules.hosts.micolash.time = {
     time.timeZone = "Europe/Moscow";
   };
 }
