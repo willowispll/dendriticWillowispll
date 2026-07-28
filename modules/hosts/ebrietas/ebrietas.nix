@@ -34,6 +34,8 @@ in {
       self.modules.finix.programs.coreutils
       self.modules.finix.programs.limine
       self.modules.finix.programs.pipewire
+      self.modules.finix.programs.spicetify
+      self.modules.finix.programs.vxwm
       self.modules.finix.programs.sudo
       self.modules.finix.programs.v2rayn
       self.modules.finix.programs.xorg
@@ -48,9 +50,8 @@ in {
 
     hjemModules = [
       self.hjemModules.fastfetch
-      self.hjemModules.kitty
+      self.hjemModules.palett
       self.hjemModules.picom
-      self.hjemModules.rofi
     ];
   };
 }

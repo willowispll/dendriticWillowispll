@@ -38,6 +38,7 @@
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    palett.url = "path:/home/willowispll/projects/palett";
 
     #nvfInputs
     nvf = {

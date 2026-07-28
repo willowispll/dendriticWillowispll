@@ -14,7 +14,7 @@ in {
       self.modules.hosts.micolash.user
 
       #featuresModules
-      #homeManager
+      self.modules.nixos.features.homeManager
       nixLSP
       removed
       #specialisation

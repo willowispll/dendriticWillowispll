@@ -73,11 +73,12 @@
             key = "OSage  ";
             keyColor = "33";
             text = ''
-              birth_install=$(stat -c %W /)
-              current=$(date +%s)
-              time_progression=$((current - birth_install))
-              days_difference=$((time_progression / 86400))
-              echo $days_difference days
+              machine_id_created=$(stat -c '%Y' /etc/machine-id 2>/dev/null)
+              if [ -n "$machine_id_created" ] && [ "$machine_id_created" -ge 0 ] 2>/dev/null; then
+                echo $((($(date +%s) - machine_id_created) / 86400)) days
+              else
+                echo unknown
+              fi
             '';
           }
         ];

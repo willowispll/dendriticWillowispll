@@ -16,13 +16,14 @@
         withVencord = true;
       })
       picom
-      pavucontrol
+      pwvucontrol
       nitrogen
       steam
       xrandr
       maim
       btop
       gamescope
+      zed-editor
     ];
   };
 }
