@@ -10,6 +10,7 @@
       oxwm
       kitty
       inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
+      xdg-utils
       rofi
       (discord.override {
         withOpenASAR = true;

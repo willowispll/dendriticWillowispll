@@ -32,6 +32,7 @@ in {
 
       #finixPrograms
       self.modules.finix.programs.coreutils
+      self.modules.finix.programs.gnome-keyring
       self.modules.finix.programs.limine
       self.modules.finix.programs.pipewire
       self.modules.finix.programs.vxwm
