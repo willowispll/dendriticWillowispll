@@ -8,14 +8,10 @@
     import-tree.url = "github:vic/import-tree";
 
     #finixInputs
-    finix.url = "github:finix-community/finix";
+    finix.url = "github:finix-community/finix?ref=pull/228/head";
     finix-community-modules.url = "github:finix-community/community-modules";
 
     #homeInputs
-    glide = {
-      url = "github:glide-browser/glide.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixcord = {
       url = "github:FlameFlag/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,7 +34,6 @@
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    palett.url = "path:/home/willowispll/projects/palett";
 
     #nvfInputs
     nvf = {

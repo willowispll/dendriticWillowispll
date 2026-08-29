@@ -11,7 +11,6 @@
         directory = self.userWillowispll.homedir;
         clobberFiles = true;
       };
-      extraModules = [inputs.palett.hjemModules.palett];
     };
   };
 }

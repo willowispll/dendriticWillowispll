@@ -22,35 +22,37 @@ in {
       self.modules.shared.programs.nvf
 
       #finixFeatures
+      self.modules.finix.features.environment
       self.modules.finix.features.fonts
       self.modules.finix.features.hjem
-      self.modules.finix.features.packages
       self.modules.finix.features.xdg
 
-      #finixProfiles
-      self.modules.finix.profiles.minimal
-
       #finixPrograms
+      self.modules.finix.programs.bash
       self.modules.finix.programs.coreutils
       self.modules.finix.programs.gnome-keyring
       self.modules.finix.programs.limine
       self.modules.finix.programs.pipewire
-      self.modules.finix.programs.vxwm
       self.modules.finix.programs.sudo
+      self.modules.finix.programs.vxwm
       self.modules.finix.programs.v2rayn
       self.modules.finix.programs.xorg
 
       #finixServices
       self.modules.finix.services.chronyd
       self.modules.finix.services.dbus
+      self.modules.finix.services.dhcpcd
+      self.modules.finix.services.getty
+      self.modules.finix.services.keventd
       self.modules.finix.services.ly
+      self.modules.finix.services.nix-daemon
       self.modules.finix.services.polkit
       self.modules.finix.services.seatd
+      self.modules.finix.services.sysklogd
     ];
 
     hjemModules = [
       self.hjemModules.fastfetch
-      self.hjemModules.palett
       self.hjemModules.picom
     ];
   };

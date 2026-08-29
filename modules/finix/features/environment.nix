@@ -1,15 +1,11 @@
-{inputs, ...}: {
-  flake.modules.finix.features.packages = {pkgs, ...}: {
+{
+  flake.modules.finix.features.environment = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
-      git
-      nixos-rebuild-ng
-      iproute2
-      iputils
+      alacritty
+      jujutsu
       nh
       fastfetch
-      oxwm
-      kitty
-      inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
+      brave-origin
       xdg-utils
       rofi
       (discord.override {
@@ -18,14 +14,12 @@
       })
       picom
       pwvucontrol
-      nitrogen
+      feh
       steam
       xrandr
       maim
       btop
-      gamescope
       zed-editor
-      prismlauncher
     ];
   };
 }

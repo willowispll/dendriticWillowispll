@@ -29,7 +29,6 @@
                 --replace-fail 'X11LIB = /usr/X11R6/lib' 'X11LIB = ${pkgs.libX11.out}/lib' \
                 --replace-fail 'FREETYPEINC = /usr/include/freetype2' 'FREETYPEINC = ${pkgs.freetype.dev}/include/freetype2'
 
-              # Keep vxwm's upstream defaults, with the choices specific to this host.
               substituteInPlace config.def.h \
                 --replace-fail '"monospace:size=10"' '"FiraCode Nerd Font Mono:size=10"' \
                 --replace-fail '"#222222"' '"#1e1e2e"' \
@@ -38,7 +37,7 @@
                 --replace-fail '"#eeeeee"' '"#cdd6f4"' \
                 --replace-fail '"#005577"' '"#89b4fa"' \
                 --replace-fail '"dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor' '"rofi", "-show", "drun"' \
-                --replace-fail '"st", NULL' '"kitty", NULL' \
+                --replace-fail '"st", NULL' '"alacritty", NULL' \
                 --replace-fail 'XK_t,      setlayout,      {.v = &layouts[0]}' 'XK_t,      setlayout,      {.v = &layouts[1]}' \
                 --replace-fail 'XK_f,      setlayout,      {.v = &layouts[1]}' 'XK_f,      setlayout,      {.v = &layouts[0]}' \
                 --replace-fail '{ MODKEY,                       XK_space,  setlayout,      {0} },' '/* Mod+Space is reserved for XKB group switching. */' \
