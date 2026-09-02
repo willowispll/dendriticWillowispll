@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.shared.programs.nvf = {
+  flake.modules.finix.programs.nvf = {
     imports = [inputs.nvf.nixosModules.default];
     programs.nvf = {
       enable = true;

@@ -8,26 +8,8 @@
     import-tree.url = "github:vic/import-tree";
 
     #finixInputs
-    finix.url = "github:finix-community/finix?ref=pull/228/head";
+    finix.url = "github:finix-community/finix";
     finix-community-modules.url = "github:finix-community/community-modules";
-
-    #homeInputs
-    nixcord = {
-      url = "github:FlameFlag/nixcord";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     #hjemInputs
     hjem = {
@@ -35,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #nvfInputs
+    #sharedInputs
     nvf = {
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";

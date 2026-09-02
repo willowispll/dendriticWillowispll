@@ -2,8 +2,10 @@
   flake.modules.finix.features.environment = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       alacritty
-      jujutsu
+      gitMinimal
       nh
+      nil
+      nixd
       fastfetch
       brave-origin
       xdg-utils

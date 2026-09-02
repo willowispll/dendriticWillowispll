@@ -1,5 +1,5 @@
-{
+{self, ...}:{
   flake.modules.hosts.ebrietas.time = {
-    time.timeZone = "Europe/Moscow";
+    time.timeZone = "${self.userWillowispll.timezone}";
   };
 }

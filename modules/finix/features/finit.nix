@@ -1,7 +1,11 @@
 {
-  flake.modules.hosts.ebrietas.finit = {pkgs, ...}: {
+  flake.modules.finix.features.finit = {pkgs, ...}: {
     finit = {
       runlevel = 3;
+
+      cgroups.system.settings = {
+        "cpu.weight" = 100;
+      };
 
       package = pkgs.finit.overrideAttrs (o: {
         version = "5.0";

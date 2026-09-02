@@ -8,23 +8,17 @@ in {
       #hostModules
       self.modules.hosts.ebrietas.boot
       self.modules.hosts.ebrietas.fileSystems
-      self.modules.hosts.ebrietas.finit
       self.modules.hosts.ebrietas.hardware
       self.modules.hosts.ebrietas.networking
       self.modules.hosts.ebrietas.time
       self.modules.hosts.ebrietas.user
 
-      #sharedFeatures
-      self.modules.shared.features.nix
-      self.modules.shared.features.nixpkgs
-
-      #sharedPrograms
-      self.modules.shared.programs.nvf
-
       #finixFeatures
       self.modules.finix.features.environment
+      self.modules.finix.features.finit
       self.modules.finix.features.fonts
       self.modules.finix.features.hjem
+      self.modules.finix.features.nixpkgs
       self.modules.finix.features.xdg
 
       #finixPrograms
@@ -32,6 +26,7 @@ in {
       self.modules.finix.programs.coreutils
       self.modules.finix.programs.gnome-keyring
       self.modules.finix.programs.limine
+      self.modules.finix.programs.nvf
       self.modules.finix.programs.pipewire
       self.modules.finix.programs.sudo
       self.modules.finix.programs.vxwm
