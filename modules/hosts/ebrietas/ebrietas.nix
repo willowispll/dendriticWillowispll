@@ -29,8 +29,8 @@ in {
       self.modules.finix.programs.nvf
       self.modules.finix.programs.pipewire
       self.modules.finix.programs.sudo
-      self.modules.finix.programs.vxwm
       self.modules.finix.programs.v2rayn
+      self.modules.finix.programs.vxwm
       self.modules.finix.programs.xorg
 
       #finixServices
