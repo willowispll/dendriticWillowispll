@@ -8,7 +8,7 @@
     import-tree.url = "github:vic/import-tree";
 
     #finixInputs
-    finix.url = "github:finix-community/finix";
+    finix.url = "github:finix-community/finix?ref=pull/239/head";
     finix-community-modules.url = "github:finix-community/community-modules";
 
     #hjemInputs
