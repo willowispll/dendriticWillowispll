@@ -5,10 +5,6 @@
   ...
 }: {
   options.flake = {
-    homeModules = lib.mkOption {
-      type = with lib.types; lazyAttrsOf deferredModule;
-      default = {};
-    };
     hjemModules = lib.mkOption {
       type = with lib.types; lazyAttrsOf deferredModule;
       default = {};
@@ -24,23 +20,18 @@
   };
 
   config.flake.lib = {
-    hmWrapper = modules: {
-      home-manager.users.${self.userWillowispll.username}.imports = modules;
-    };
     hjemWrapper = modules: {
       hjem.users.${self.userWillowispll.username}.imports = modules;
     };
 
     mkSystem = {
       modules,
-      homeModules ? [],
       hjemModules ? [],
       configuration ? {},
-      finix ? false,
+      finix,
     }: let
       baseModules =
         modules
-        ++ lib.optional (homeModules != []) (self.lib.hmWrapper homeModules)
         ++ lib.optional (hjemModules != []) (self.lib.hjemWrapper hjemModules);
       specialArgs = {inherit inputs;};
     in
