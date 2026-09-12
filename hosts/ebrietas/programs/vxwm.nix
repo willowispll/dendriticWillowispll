@@ -4,49 +4,77 @@
     programs.vxwm = {
       enable = true;
 
-      autostart = [
-        "${pkgs.xrandr}/bin/xrandr --output DP-3 --mode 1920x1080 --rate 165"
-        "pipewire &"
-        "wireplumber &"
-        "pipewire-pulse &"
-        "''${pkgs.picom}/bin/picom --config \${XDG_CONFIG_HOME:-\$HOME/.config}/picom/picom.conf &"
-        "(while true; do ''${pkgs.xsetroot}/bin/xsetroot -name \"\$(date '+%H:%M')\"; sleep 30; done) &"
-      ];
-
-      package = pkgs.vxwm.overrideAttrs (old: {
-        postPatch =
-          (old.postPatch or "")
-          + ''
-            substituteInPlace config.def.h \
-              --replace-fail '"monospace:size=10"' '"FiraCode Nerd Font Mono:size=10"' \
-              --replace-fail '"#222222"' '"#1e1e2e"' \
-              --replace-fail '"#444444"' '"#585b70"' \
-              --replace-fail '"#bbbbbb"' '"#cdd6f4"' \
-              --replace-fail '"#eeeeee"' '"#cdd6f4"' \
-              --replace-fail '"#005577"' '"#89b4fa"' \
-              --replace-fail '"dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor' '"rofi", "-show", "drun"' \
-              --replace-fail '"st", NULL' '"alacritty", NULL' \
-              --replace-fail 'XK_t,      setlayout,      {.v = &layouts[0]}' 'XK_t,      setlayout,      {.v = &layouts[1]}' \
-              --replace-fail 'XK_f,      setlayout,      {.v = &layouts[1]}' 'XK_f,      setlayout,      {.v = &layouts[0]}' \
-              --replace-fail '{ MODKEY,                       XK_space,  setlayout,      {0} },' '/* Mod+Space is reserved for XKB group switching. */' \
-              --replace-fail '{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },' '{ MODKEY, XK_d, spawn, {.v = dmenucmd } },
-              { MODKEY, XK_s, spawn, SHCMD("maim -s $HOME/$(date +%F-%T).png") },' \
-              --replace-fail '{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },' '{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },' \
-              --replace-fail '{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },' '{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },' \
-              --replace-fail '{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },' '{ MODKEY,                       XK_q,      killclient,     {0} },' \
-              --replace-fail '{ MODKEY,                       XK_q,      enhancedtogglefloating, {0} },' '{ MODKEY,                       XK_e,      enhancedtogglefloating, {0} },' \
-              --replace-fail '{ Mod1Mask,                     KEY,      tag,            {.ui = 1 << TAG} },' '{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} },'
-
-            substituteInPlace modules.def.h \
-              --replace-fail '#define ZOOM 1' '#define ZOOM 0' \
-              --replace-fail '#define TAG_TO_TAG 1' '#define TAG_TO_TAG 0'
-
-            substituteInPlace modules/directionalfocus/directionalfocus.c \
-              --replace-fail 'if (!s)' 'if (!s || s->isfullscreen)' \
-              --replace-fail 'int isfloating = s->isfloating;' '/* Allow focus across floating and tiled windows. */' \
-              --replace-fail 'if (!ISVISIBLE(c) || c->isfloating != isfloating)' 'if (!ISVISIBLE(c) || c->isfullscreen)'
+      package = pkgs.vxwm.overrideAttrs (
+        old: let
+          startupCommands = ''
+            "${pkgs.xrandr}/bin/xrandr --output DP-3 --mode 1920x1080 --rate 165",
+            "${pkgs.pipewire}/bin/pipewire",
+            "${pkgs.wireplumber}/bin/wireplumber",
+            "${pkgs.pipewire}/bin/pipewire-pulse",
+            "${pkgs.picom}/bin/picom --config \"''${XDG_CONFIG_HOME:-$HOME/.config}/picom/picom.conf\"",
+            "while true; do ${pkgs.xsetroot}/bin/xsetroot -name \"$(date +%H:%M)\"; sleep 30; done",
           '';
-      });
+        in {
+          postPatch =
+            (old.postPatch or "")
+            + ''
+              substituteInPlace config.def.h \
+                --replace-fail '"monospace:size=10"' '"FiraCode Nerd Font Mono:size=10"' \
+                --replace-fail '"#222222"' '"#1e1e2e"' \
+                --replace-fail '"#444444"' '"#585b70"' \
+                --replace-fail '"#bbbbbb"' '"#cdd6f4"' \
+                --replace-fail '"#eeeeee"' '"#cdd6f4"' \
+                --replace-fail '"#005577"' '"#89b4fa"' \
+                \
+                --replace-fail \
+                  '"dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor' \
+                  '"rofi", "-show", "drun"' \
+                --replace-fail '"st", NULL' '"alacritty", NULL' \
+                \
+                --replace-fail \
+                  'XK_t,      setlayout,      {.v = &layouts[0]}' \
+                  'XK_t,      setlayout,      {.v = &layouts[1]}' \
+                --replace-fail \
+                  'XK_f,      setlayout,      {.v = &layouts[1]}' \
+                  'XK_f,      setlayout,      {.v = &layouts[0]}' \
+                \
+                --replace-fail \
+                  '{ MODKEY,                       XK_space,  setlayout,      {0} },' \
+                  '/* Mod+Space is reserved for XKB group switching. */' \
+                --replace-fail \
+                  '{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },' \
+                  '{ MODKEY, XK_d, spawn, {.v = dmenucmd } },
+                   { MODKEY, XK_s, spawn, SHCMD("maim -s $HOME/$(date +%F-%T).png") },' \
+                --replace-fail \
+                  '{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },' \
+                  '{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },' \
+                --replace-fail \
+                  '{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },' \
+                  '{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },' \
+                --replace-fail \
+                  '{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },' \
+                  '{ MODKEY,                       XK_q,      killclient,     {0} },' \
+                --replace-fail \
+                  '{ MODKEY,                       XK_q,      enhancedtogglefloating, {0} },' \
+                  '{ MODKEY,                       XK_e,      enhancedtogglefloating, {0} },' \
+                --replace-fail \
+                  '{ Mod1Mask,                     KEY,      tag,            {.ui = 1 << TAG} },' \
+                  '{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} },' \
+                \
+                --replace-fail '"st",' '${startupCommands}'
+
+              substituteInPlace modules.def.h \
+                --replace-fail '#define ZOOM 1' '#define ZOOM 0' \
+                --replace-fail '#define TAG_TO_TAG 1' '#define TAG_TO_TAG 0' \
+                --replace-fail '#define AUTOSTART 0' '#define AUTOSTART 1'
+
+              substituteInPlace modules/directionalfocus/directionalfocus.c \
+                --replace-fail 'if (!s)' 'if (!s || s->isfullscreen)' \
+                --replace-fail 'int isfloating = s->isfloating;' "" \
+                --replace-fail 'if (!ISVISIBLE(c) || c->isfloating != isfloating)' 'if (!ISVISIBLE(c) || c->isfullscreen)'
+            '';
+        }
+      );
     };
   };
 }

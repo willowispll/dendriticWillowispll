@@ -30,9 +30,7 @@
       configuration ? {},
       finix,
     }: let
-      baseModules =
-        modules
-        ++ lib.optional (hjemModules != []) (self.lib.hjemWrapper hjemModules);
+      baseModules = modules ++ lib.optional (hjemModules != []) (self.lib.hjemWrapper hjemModules);
       specialArgs = {inherit inputs;};
     in
       (

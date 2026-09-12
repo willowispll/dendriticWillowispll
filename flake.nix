@@ -10,7 +10,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     #finix
-    finix.url = "github:finix-community/finix?ref=pull/239/head";
+    finix.url = "github:finix-community/finix";
     finix-community-modules.url = "github:finix-community/community-modules";
 
     #hjem
