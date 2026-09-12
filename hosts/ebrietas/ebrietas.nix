@@ -19,6 +19,7 @@ in {
       self.hosts.ebrietas.programs.gnome-keyring
       self.hosts.ebrietas.programs.limine
       self.hosts.ebrietas.programs.pipewire
+      self.hosts.ebrietas.programs.sh
       self.hosts.ebrietas.programs.sudo
       self.hosts.ebrietas.programs.v2rayn
       self.hosts.ebrietas.programs.vxwm
