@@ -1,5 +1,5 @@
 {
   flake.hosts.ebrietas.programs.sh = {pkgs, ...}: {
-    programs.sh.package = pkgs.busybox;
+    programs.sh.package = pkgs.dash;
   };
 }
