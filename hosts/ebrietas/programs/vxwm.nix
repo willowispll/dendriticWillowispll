@@ -28,8 +28,8 @@
                 \
                 --replace-fail \
                   '"dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor' \
-                  '"rofi", "-show", "drun"' \
-                --replace-fail '"st", NULL' '"kitty", NULL' \
+                  '"${pkgs.rofi}/bin/rofi", "-show", "drun"' \
+                --replace-fail '"st", NULL' '"${pkgs.kitty}/bin/kitty", NULL' \
                 \
                 --replace-fail \
                   'XK_t,      setlayout,      {.v = &layouts[0]}' \
@@ -44,7 +44,7 @@
                 --replace-fail \
                   '{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },' \
                   '{ MODKEY, XK_d, spawn, {.v = dmenucmd } },
-                   { MODKEY, XK_s, spawn, SHCMD("maim -s $HOME/$(date +%F-%T).png") },' \
+                   { MODKEY, XK_s, spawn, SHCMD("${pkgs.maim}/bin/maim -s $HOME/$(date +%F-%T).png") },' \
                 --replace-fail \
                   '{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },' \
                   '{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },' \

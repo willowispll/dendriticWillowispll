@@ -48,6 +48,7 @@ in {
     hjemModules = [
       #hjemModules
       self.hjemModules.fastfetch
+      self.hjemModules.git
       self.hjemModules.picom
     ];
   };
