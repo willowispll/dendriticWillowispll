@@ -29,7 +29,7 @@
                 --replace-fail \
                   '"dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor' \
                   '"rofi", "-show", "drun"' \
-                --replace-fail '"st", NULL' '"alacritty", NULL' \
+                --replace-fail '"st", NULL' '"kitty", NULL' \
                 \
                 --replace-fail \
                   'XK_t,      setlayout,      {.v = &layouts[0]}' \

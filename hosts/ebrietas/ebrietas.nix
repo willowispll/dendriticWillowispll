@@ -16,7 +16,6 @@ in {
       #ebrietasPrograms
       self.hosts.ebrietas.programs.bash
       self.hosts.ebrietas.programs.coreutils
-      self.hosts.ebrietas.programs.gnome-keyring
       self.hosts.ebrietas.programs.limine
       self.hosts.ebrietas.programs.pipewire
       self.hosts.ebrietas.programs.sh

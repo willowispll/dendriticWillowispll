@@ -1,19 +1,15 @@
 {
   flake.hosts.ebrietas.features.environment = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
-      alacritty
+      kitty
       gitMinimal
       nh
       nil
       nixd
       fastfetch
-      brave-origin
+      firefox
       xdg-utils
       rofi
-      (discord.override {
-        withOpenASAR = true;
-        withVencord = true;
-      })
       picom
       pwvucontrol
       feh
@@ -21,7 +17,8 @@
       xrandr
       maim
       btop
-      zed-editor
+      gram
+      concord-tui
     ];
   };
 }
