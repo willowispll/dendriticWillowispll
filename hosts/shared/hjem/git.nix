@@ -1,7 +1,7 @@
 {
-  flake.hjemModules.git = { lib, ... }: {
+  flake.hjemModules.git = {lib, ...}: {
     xdg.config.files."git/config" = {
-      generator = lib.generators.toINI { };
+      generator = lib.generators.toINI {};
       value = {
         core = {
           fileMode = false;

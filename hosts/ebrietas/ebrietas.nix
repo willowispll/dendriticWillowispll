@@ -32,7 +32,6 @@ in {
       self.hosts.ebrietas.services.keventd
       self.hosts.ebrietas.services.ly
       self.hosts.ebrietas.services.nix-daemon
-      self.hosts.ebrietas.services.polkit
       self.hosts.ebrietas.services.seatd
       self.hosts.ebrietas.services.sysklogd
 
@@ -47,7 +46,6 @@ in {
 
     hjemModules = [
       #hjemModules
-      self.hjemModules.fastfetch
       self.hjemModules.git
       self.hjemModules.picom
     ];

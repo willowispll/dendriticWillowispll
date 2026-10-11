@@ -2,18 +2,20 @@
   flake.hosts.ebrietas.features.environment = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       gitMinimal
-      jujutsu
+      #(discord.override {
+      #  withOpenASAR = true;
+      #  withVencord = true;
+      #})
       nh
       nil
-      fastfetch
       firefox
       xdg-utils
-      pwvucontrol
+      ncpamixer
       feh
       steam
-      btop
-      gram
       concord-tui
     ];
+
+    environment.pathsToLink = [ "/share/applications" ];
   };
 }

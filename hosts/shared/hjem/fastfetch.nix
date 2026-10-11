@@ -14,7 +14,6 @@
         };
 
         modules = [
-          "break"
           "title"
 
           {
