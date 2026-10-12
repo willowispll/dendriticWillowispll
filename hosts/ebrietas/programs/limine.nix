@@ -5,6 +5,7 @@
       enable = true;
       secureBoot.enable = true;
       settings.wallpaper = [];
+      maxGenerations = 5;
       extraEntries = ''
         /Windows
           protocol: efi

@@ -6,9 +6,6 @@
       settings = {
         auto-optimise-store = true;
 
-        cores = 1;
-        max-jobs = 4;
-
         experimental-features = [
           "nix-command"
           "flakes"

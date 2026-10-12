@@ -7,7 +7,7 @@
       package = pkgs.vxwm.overrideAttrs (
         old: let
           startupCommands = ''
-            "${pkgs.xrandr}/bin/xrandr --output DP-3 --mode 1920x1080 --rate 165",
+            "${pkgs.xrandr}/bin/xrandr --output DisplayPort-2 --mode 1920x1080 --rate 165",
             "${pkgs.pipewire}/bin/pipewire",
             "${pkgs.wireplumber}/bin/wireplumber",
             "${pkgs.pipewire}/bin/pipewire-pulse",

@@ -2,7 +2,7 @@
   flake.hosts.ebrietas.features.finit = {
     finit = {
       runlevel = 3;
-      cgroups.system.settings."cpu.weight" = 100;
+      cgroups.system."cpu.weight" = 100;
     };
   };
 }
