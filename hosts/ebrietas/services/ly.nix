@@ -1,6 +1,6 @@
-{inputs, ...}: {
-  flake.hosts.ebrietas.services.ly = {lib, ...}: {
-    imports = [inputs.finix.nixosModules.ly];
+{ inputs, ... }: {
+  flake.hosts.ebrietas.services.ly = { lib, ... }: {
+    imports = [ inputs.finix.nixosModules.ly ];
     services.ly = {
       enable = true;
       settings = {

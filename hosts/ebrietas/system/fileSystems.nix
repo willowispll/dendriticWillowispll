@@ -14,6 +14,6 @@
       ];
     };
 
-    swapDevices = [];
+    swapDevices = [ ];
   };
 }

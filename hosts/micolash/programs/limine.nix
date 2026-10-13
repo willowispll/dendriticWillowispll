@@ -1,9 +1,9 @@
-{inputs, ...}: {
+{ inputs, ... }: {
   flake.hosts.micolash.programs.limine = {
-    imports = [inputs.finix.nixosModules.limine];
+    imports = [ inputs.finix.nixosModules.limine ];
     programs.limine = {
       enable = true;
-      settings.wallpaper = [];
+      settings.wallpaper = [ ];
     };
   };
 }

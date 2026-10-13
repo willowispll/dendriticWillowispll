@@ -1,11 +1,11 @@
 {
-  flake.hosts.micolash.system.boot = {pkgs, ...}: {
+  flake.hosts.micolash.system.boot = { pkgs, ... }: {
     boot = {
       kernelModules = [
         "tun"
         "kvm-amd"
       ];
-      kernelParams = ["loglevel=3"];
+      kernelParams = [ "loglevel=3" ];
       kernelPackages = pkgs.linuxPackages_latest;
       initrd.availableKernelModules = [
         "nvme"

@@ -1,6 +1,6 @@
-{inputs, ...}: {
+{ inputs, ... }: {
   flake.hosts.micolash.services.getty = {
-    imports = [inputs.finix.nixosModules.getty];
+    imports = [ inputs.finix.nixosModules.getty ];
     services.getty = {
       enable = true;
 

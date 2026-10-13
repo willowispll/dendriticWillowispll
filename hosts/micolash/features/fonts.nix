@@ -1,5 +1,5 @@
 {
-  flake.hosts.micolash.features.fonts = {pkgs, ...}: {
+  flake.hosts.micolash.features.fonts = { pkgs, ... }: {
     fonts = {
       enableDefaultPackages = true;
 
@@ -9,7 +9,7 @@
 
       fontconfig = {
         enable = true;
-        defaultFonts.monospace = ["FiraCode Nerd Font Mono"];
+        defaultFonts.monospace = [ "FiraCode Nerd Font Mono" ];
       };
     };
   };

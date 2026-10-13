@@ -1,5 +1,5 @@
 {
-  flake.hosts.micolash.programs.coreutils = {pkgs, ...}: {
+  flake.hosts.micolash.programs.coreutils = { pkgs, ... }: {
     programs.coreutils.package = pkgs.busybox;
   };
 }

@@ -2,9 +2,10 @@
   self,
   inputs,
   ...
-}: {
+}:
+{
   flake.hosts.micolash.features.hjem = {
-    imports = [inputs.hjem.finixModules.default];
+    imports = [ inputs.hjem.finixModules.default ];
     hjem = {
       users.willowispll = {
         user = self.userWillowispll.username;

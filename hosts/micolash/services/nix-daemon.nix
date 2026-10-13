@@ -1,6 +1,6 @@
-{inputs, ...}: {
+{ inputs, ... }: {
   flake.hosts.micolash.services.nix-daemon = {
-    imports = [inputs.finix.nixosModules.nix-daemon];
+    imports = [ inputs.finix.nixosModules.nix-daemon ];
     services.nix-daemon = {
       enable = true;
       settings = {

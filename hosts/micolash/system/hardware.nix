@@ -1,5 +1,5 @@
 {
-  flake.hosts.micolash.system.hardware = {pkgs, ...}: {
+  flake.hosts.micolash.system.hardware = { pkgs, ... }: {
     hardware = {
       firmware = [
         pkgs.linux-firmware

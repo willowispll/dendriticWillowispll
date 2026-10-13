@@ -1,6 +1,6 @@
-{inputs, ...}: {
+{ inputs, ... }: {
   flake.hosts.micolash.programs.pipewire = {
-    imports = [inputs.finix-community-modules.nixosModules.pipewire];
+    imports = [ inputs.finix-community-modules.nixosModules.pipewire ];
     programs.pipewire.enable = true;
   };
 }

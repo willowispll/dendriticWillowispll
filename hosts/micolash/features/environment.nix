@@ -1,5 +1,5 @@
 {
-  flake.hosts.micolash.features.environment = {pkgs, ...}: {
+  flake.hosts.micolash.features.environment = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       alacritty
       waytrogen
