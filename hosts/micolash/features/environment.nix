@@ -1,22 +1,18 @@
 {
   flake.hosts.micolash.features.environment = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
-      alacritty
+      kitty
       waytrogen
       fuzzel
       brave-origin
       xdg-utils
-      (discord.override {
-        withOpenASAR = true;
-        withVencord = true;
-      })
-      pwvucontrol
-      zed-editor
+      concord-tui
+      ncpamixer
+      gram
       awww
 
       nh
       nil
-      nixd
       btop
       fastfetch
       gitMinimal
