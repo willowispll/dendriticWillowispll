@@ -1,5 +1,5 @@
 {
-  flake.hosts.ebrietas.services.dbus = {
+  flake.hosts.shared.services.dbus = {
     services.dbus.enable = true;
   };
 }

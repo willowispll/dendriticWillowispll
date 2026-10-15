@@ -1,5 +1,5 @@
 {
-  flake.hosts.ebrietas.services.seatd = {
+  flake.hosts.shared.services.seatd = {
     services.seatd.enable = true;
   };
 }

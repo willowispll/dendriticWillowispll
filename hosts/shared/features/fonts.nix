@@ -1,5 +1,5 @@
 {
-  flake.hosts.ebrietas.features.fonts = { pkgs, ... }: {
+  flake.hosts.shared.features.fonts = { pkgs, ... }: {
     fonts = {
       enableDefaultPackages = true;
 

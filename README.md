@@ -25,10 +25,13 @@ Willowispll's flake-based NixOS/finix configurations for personal devices.
     │   ├── services
     │   └── system
     └── shared
+        ├── features
         ├── hjem
+        ├── programs
+        ├── services
         └── users
 
-15 directories
+18 directories
 
 [willowispll@ebrietas:~/dendriticWillowispll]$
 ```
