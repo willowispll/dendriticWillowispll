@@ -57,6 +57,7 @@ in
     hjemModules = [
       #hjemModules
       self.hjemModules.fastfetch
+      self.hjemModules.gram
       self.hjemModules.picom
     ];
   };

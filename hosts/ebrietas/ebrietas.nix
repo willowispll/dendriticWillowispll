@@ -55,6 +55,7 @@ in
     hjemModules = [
       #sharedHjem
       self.hjemModules.git
+      self.hjemModules.gram
       self.hjemModules.picom
     ];
   };
