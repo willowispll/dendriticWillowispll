@@ -9,9 +9,13 @@
     finix.url = "github:finix-community/finix";
     finix-community-modules.url = "github:finix-community/community-modules";
 
-    #hjem
+    #hjem and basix
     hjem = {
       url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    basix = {
+      url = "github:NotAShelf/basix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

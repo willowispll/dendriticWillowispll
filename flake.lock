@@ -1,12 +1,33 @@
 {
   "nodes": {
+    "basix": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792000185,
+        "narHash": "sha256-czowYGGnTc7HCeApRMAYDNGB6HnQyPm/jXJg/FeqmmA=",
+        "owner": "NotAShelf",
+        "repo": "basix",
+        "rev": "d083c8ecd726dc72d37cf5f2d17a8e8dfb176a95",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotAShelf",
+        "repo": "basix",
+        "type": "github"
+      }
+    },
     "finix": {
       "locked": {
-        "lastModified": 1792031101,
-        "narHash": "sha256-W6mIQ4QSYJ9KHoW4MXVlGVRLfZL63/9tmpNfAshUvWU=",
+        "lastModified": 1792111865,
+        "narHash": "sha256-D2yOraYYFR7WSX/NndMtnA0vNU3Ukw+dEKigQAIhQtE=",
         "owner": "finix-community",
         "repo": "finix",
-        "rev": "570ecd3fe156bb6eac8b9e110fc6cf973f4576de",
+        "rev": "3348ed178c7b457c9ad64dec3fefed66c17b1462",
         "type": "github"
       },
       "original": {
@@ -27,6 +48,22 @@
       "original": {
         "owner": "finix-community",
         "repo": "community-modules",
+        "type": "github"
+      }
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767039857,
+        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
         "type": "github"
       }
     },
@@ -116,6 +153,7 @@
     },
     "root": {
       "inputs": {
+        "basix": "basix",
         "finix": "finix",
         "finix-community-modules": "finix-community-modules",
         "flake-parts": "flake-parts",
