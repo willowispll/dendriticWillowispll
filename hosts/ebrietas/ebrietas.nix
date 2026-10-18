@@ -38,6 +38,7 @@ in
       self.hosts.shared.services.keventd
       self.hosts.shared.services.seatd
       self.hosts.shared.services.sysklogd
+      self.hosts.shared.services.tailscale
 
       #ebrietasServices
       self.hosts.ebrietas.services.ly
