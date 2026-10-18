@@ -36,6 +36,7 @@ in
       self.hosts.shared.services.dhcpcd
       self.hosts.shared.services.getty
       self.hosts.shared.services.keventd
+      self.hosts.shared.services.openssh
       self.hosts.shared.services.seatd
       self.hosts.shared.services.sysklogd
       self.hosts.shared.services.tailscale
