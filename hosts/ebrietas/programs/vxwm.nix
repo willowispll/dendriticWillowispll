@@ -28,7 +28,7 @@
               \
               --replace-fail \
                 '"dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor' \
-                '"${pkgs.rofi}/bin/rofi", "-show", "drun"' \
+                '"${pkgs.j4-dmenu-desktop}/bin/j4-dmenu-desktop", "--no-generic", "--dmenu=${pkgs.dmenu}/bin/dmenu -i -fn \"FiraCode Nerd Font Mono:size=10\" -nb \"#1e1e2e\" -nf \"#cdd6f4\" -sb \"#89b4fa\" -sf \"#1e1e2e\""' \
               --replace-fail '"st", NULL' '"${pkgs.kitty}/bin/kitty", NULL' \
               \
               --replace-fail \
