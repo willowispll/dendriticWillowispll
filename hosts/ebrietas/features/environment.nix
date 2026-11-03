@@ -3,7 +3,7 @@
     environment.systemPackages = with pkgs; [
       gitMinimal
       (discord.override {
-        withOpenASAR = true;
+        # withOpenASAR = true;
         withVencord = true;
       })
       nh
@@ -13,7 +13,8 @@
       ncpamixer
       feh
       steam
-      gram
+      fastfetch
+      helix
     ];
 
     environment.pathsToLink = [ "/share/applications" ];
