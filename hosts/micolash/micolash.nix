@@ -18,17 +18,16 @@ in
       self.hosts.micolash.features.xdg
 
       #sharedPrograms
+      self.hosts.shared.programs.amnezia-vpn
       self.hosts.shared.programs.bash
       self.hosts.shared.programs.coreutils
       self.hosts.shared.programs.pipewire
       self.hosts.shared.programs.sudo
-      self.hosts.shared.programs.v2rayn
 
       #micolashPrograms
       self.hosts.micolash.programs.gnome-keyring
       self.hosts.micolash.programs.limine
       self.hosts.micolash.programs.niri
-      self.hosts.micolash.programs.xwayland-satellite
 
       #sharedServices
       self.hosts.shared.services.chronyd
