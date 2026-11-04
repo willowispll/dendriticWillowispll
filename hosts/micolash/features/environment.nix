@@ -11,9 +11,6 @@
       gram
       awww
 
-      epy
-      onlyoffice-desktopeditors
-
       nh
       nil
       btop
