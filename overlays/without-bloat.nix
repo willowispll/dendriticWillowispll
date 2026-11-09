@@ -1,5 +1,13 @@
 final: prev: {
-  foot = (prev.foot.override { }).overrideAttrs (oldAttrs: {
+  brave-origin = prev.brave-origin.overrideAttrs (oldAttrs: {
+    postInstall = (oldAttrs.postInstall or "") + ''
+      rm -rf \
+        $out/opt/brave.com/brave-origin/xdg-settings \
+        $out/opt/brave.com/brave-origin/xdg-mime
+    '';
+  });
+
+  foot = prev.foot.overrideAttrs (oldAttrs: {
     postInstall = (oldAttrs.postInstall or "") + ''
       rm -f $out/bin/footclient
       rm -f $out/share/applications/footclient.desktop

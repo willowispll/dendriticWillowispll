@@ -5,6 +5,7 @@
       fuzzel
       handlr-regex
       concord-tui
+      brave-origin
       ncpamixer
       gram
       wbg

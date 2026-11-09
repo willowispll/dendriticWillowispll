@@ -65,10 +65,23 @@ final: prev: {
               "-Dgl_winsys=wayland,egl,surfaceless"
             ];
           });
+
+      gst-plugins-bad = gstPrev.gst-plugins-bad.overrideAttrs (oldAttrs: {
+        mesonFlags =
+          builtins.filter (flag: !(builtins.match "-Dx11=.*" flag != null)) (oldAttrs.mesonFlags or [ ])
+          ++ [
+            "-Dx11=disabled"
+          ];
+      });
     }
   );
 
   gtk3 = prev.gtk3.override {
+    x11Support = false;
+    xineramaSupport = false;
+  };
+
+  gtk4 = prev.gtk4.override {
     x11Support = false;
     xineramaSupport = false;
   };
