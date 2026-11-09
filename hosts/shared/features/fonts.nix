@@ -1,16 +1,19 @@
 {
   flake.hosts.shared.features.fonts = { pkgs, ... }: {
     fonts = {
-      enableDefaultPackages = true;
-
-      packages = with pkgs; [
-        nerd-fonts.fira-code
-        nerd-fonts.jetbrains-mono
+      packages = [
+        pkgs.noto-fonts
+        pkgs.nerd-fonts.jetbrains-mono
       ];
 
       fontconfig = {
         enable = true;
-        defaultFonts.monospace = [ "FiraCode Nerd Font Mono" ];
+        defaultFonts = {
+          monospace = [ "JetBrainsMono Nerd Font" ];
+          sansSerif = [ "Noto Sans" ];
+          serif = [ "Noto Serif" ];
+          emoji = [ "Noto Color Emoji" ];
+        };
       };
     };
   };

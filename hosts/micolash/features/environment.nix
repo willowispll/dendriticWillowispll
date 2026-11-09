@@ -1,20 +1,19 @@
 {
   flake.hosts.micolash.features.environment = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
-      kitty
-      waytrogen
+      foot
       fuzzel
-      brave-origin
-      xdg-utils
+      handlr-regex
       concord-tui
       ncpamixer
       gram
-      awww
+      wbg
 
       nh
       nil
       btop
-      fastfetch
+      nix-tree
+      nerdfetch
       gitMinimal
     ];
   };
