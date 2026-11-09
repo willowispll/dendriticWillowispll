@@ -94,25 +94,20 @@ final: prev: {
     udev = final.libudev-zero;
   };
 
-  wireplumber =
-    (prev.wireplumber.override {
-      enableDocs = false;
-      enableGI = false;
-    }).overrideAttrs
-      (oldAttrs: {
-        postPatch = (oldAttrs.postPatch or "") + ''
-          substituteInPlace po/meson.build \
-            --replace-fail \
-              "python_po = pymod.find_installation('python3')" \
-              "python_po = pymod.find_installation('python3', required: false)"
-        '';
+  wireplumber = (prev.wireplumber.override { }).overrideAttrs (oldAttrs: {
+    postPatch = (oldAttrs.postPatch or "") + ''
+      substituteInPlace po/meson.build \
+        --replace-fail \
+          "python_po = pymod.find_installation('python3')" \
+          "python_po = pymod.find_installation('python3', required: false)"
+    '';
 
-        buildInputs = builtins.filter (p: p != prev.systemdLibs) (oldAttrs.buildInputs or [ ]);
-        mesonFlags = (oldAttrs.mesonFlags or [ ]) ++ [
-          "-Dsystemd-system-service=false"
-          "-Dsystemd=disabled"
-        ];
-      });
+    buildInputs = builtins.filter (p: p != prev.systemdLibs) (oldAttrs.buildInputs or [ ]);
+    mesonFlags = (oldAttrs.mesonFlags or [ ]) ++ [
+      "-Dsystemd-system-service=false"
+      "-Dsystemd=disabled"
+    ];
+  });
 
   xdg-desktop-portal =
     (prev.xdg-desktop-portal.override {

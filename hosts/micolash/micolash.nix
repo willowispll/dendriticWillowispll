@@ -23,6 +23,7 @@ in
       self.hosts.shared.programs.coreutils
       self.hosts.shared.programs.pipewire
       self.hosts.shared.programs.sudo
+      self.hosts.shared.programs.wireplumber
 
       #micolashPrograms
       self.hosts.micolash.programs.gnome-keyring
