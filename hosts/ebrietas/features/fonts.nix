@@ -1,5 +1,5 @@
 {
-  flake.hosts.shared.features.fonts = { pkgs, ... }: {
+  flake.hosts.ebrietas.features.fonts = { pkgs, ... }: {
     fonts = {
       packages = [
         pkgs.noto-fonts

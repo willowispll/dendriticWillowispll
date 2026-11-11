@@ -34,18 +34,15 @@
       }:
       let
         baseModules = modules ++ lib.optional (hjemModules != [ ]) (self.lib.hjemWrapper hjemModules);
-        specialArgs = { inherit inputs; };
       in
       (
         if finix then
           inputs.finix.lib.finixSystem {
             inherit (inputs.nixpkgs) lib;
-            inherit specialArgs;
             modules = baseModules;
           }
         else
           inputs.nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
             modules = baseModules;
           }
       )

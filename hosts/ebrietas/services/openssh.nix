@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.hosts.shared.services.openssh = {
+  flake.hosts.ebrietas.services.openssh = {
     imports = [ inputs.finix.nixosModules.openssh ];
     services.openssh.enable = true;
   };

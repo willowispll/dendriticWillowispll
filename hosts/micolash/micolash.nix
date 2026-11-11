@@ -7,45 +7,39 @@ in
     finix = true;
 
     modules = [
-      #sharedFeatures
-      self.hosts.shared.features.finit
-      self.hosts.shared.features.fonts
-
       #micolashFeatures
       self.hosts.micolash.features.environment
+      self.hosts.micolash.features.finit
+      self.hosts.micolash.features.fonts
       self.hosts.micolash.features.hjem
       self.hosts.micolash.features.nixpkgs
       self.hosts.micolash.features.xdg
 
-      #sharedPrograms
-      self.hosts.shared.programs.amnezia-vpn
-      self.hosts.shared.programs.bash
-      self.hosts.shared.programs.coreutils
-      self.hosts.shared.programs.pipewire
-      self.hosts.shared.programs.sudo
-      self.hosts.shared.programs.wireplumber
-
       #micolashPrograms
+      self.hosts.micolash.programs.amnezia-vpn
+      self.hosts.micolash.programs.bash
+      self.hosts.micolash.programs.coreutils
       self.hosts.micolash.programs.gnome-keyring
       self.hosts.micolash.programs.limine
       self.hosts.micolash.programs.niri
-
-      #sharedServices
-      self.hosts.shared.services.chronyd
-      self.hosts.shared.services.dbus
-      self.hosts.shared.services.dhcpcd
-      self.hosts.shared.services.getty
-      self.hosts.shared.services.keventd
-      self.hosts.shared.services.openssh
-      self.hosts.shared.services.seatd
-      self.hosts.shared.services.sysklogd
-      self.hosts.shared.services.tailscale
+      self.hosts.micolash.programs.pipewire
+      self.hosts.micolash.programs.sudo
+      self.hosts.micolash.programs.wireplumber
 
       #micolashServices
+      self.hosts.micolash.services.chronyd
+      self.hosts.micolash.services.dbus
+      self.hosts.micolash.services.dhcpcd
+      self.hosts.micolash.services.getty
       self.hosts.micolash.services.iwd
+      self.hosts.micolash.services.keventd
       self.hosts.micolash.services.ly
       self.hosts.micolash.services.nix-daemon
+      self.hosts.micolash.services.openssh
       self.hosts.micolash.services.polkit
+      self.hosts.micolash.services.seatd
+      self.hosts.micolash.services.sysklogd
+      self.hosts.micolash.services.tailscale
 
       #micolashSystem
       self.hosts.micolash.system.boot
@@ -58,9 +52,8 @@ in
 
     hjemModules = [
       #hjemModules
-      self.hjemModules.fastfetch
+      self.hjemModules.git
       self.hjemModules.gram
-      self.hjemModules.picom
     ];
   };
 }

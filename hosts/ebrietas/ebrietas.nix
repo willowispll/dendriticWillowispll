@@ -7,43 +7,38 @@ in
     finix = true;
 
     modules = [
-      #sharedFeatures
-      self.hosts.shared.features.finit
-      self.hosts.shared.features.fonts
-
       #ebrietasFeatures
       self.hosts.ebrietas.features.environment
+      self.hosts.ebrietas.features.finit
+      self.hosts.ebrietas.features.fonts
       self.hosts.ebrietas.features.hjem
       self.hosts.ebrietas.features.nixpkgs
       self.hosts.ebrietas.features.xdg
 
-      #sharedPrograms
-      self.hosts.shared.programs.amnezia-vpn
-      self.hosts.shared.programs.bash
-      self.hosts.shared.programs.coreutils
-      self.hosts.shared.programs.pipewire
-      self.hosts.shared.programs.sudo
-
       #ebrietasPrograms
+      self.hosts.ebrietas.programs.amnezia-vpn
+      self.hosts.ebrietas.programs.bash
+      self.hosts.ebrietas.programs.coreutils
       self.hosts.ebrietas.programs.limine
+      self.hosts.ebrietas.programs.pipewire
       self.hosts.ebrietas.programs.sh
+      self.hosts.ebrietas.programs.sudo
       self.hosts.ebrietas.programs.vxwm
+      self.hosts.ebrietas.programs.wireplumber
       self.hosts.ebrietas.programs.xorg
 
-      #sharedServices
-      self.hosts.shared.services.chronyd
-      self.hosts.shared.services.dbus
-      self.hosts.shared.services.dhcpcd
-      self.hosts.shared.services.getty
-      self.hosts.shared.services.keventd
-      self.hosts.shared.services.openssh
-      self.hosts.shared.services.seatd
-      self.hosts.shared.services.sysklogd
-      self.hosts.shared.services.tailscale
-
       #ebrietasServices
+      self.hosts.ebrietas.services.chronyd
+      self.hosts.ebrietas.services.dbus
+      self.hosts.ebrietas.services.dhcpcd
+      self.hosts.ebrietas.services.getty
+      self.hosts.ebrietas.services.keventd
       self.hosts.ebrietas.services.ly
       self.hosts.ebrietas.services.nix-daemon
+      self.hosts.ebrietas.services.openssh
+      self.hosts.ebrietas.services.seatd
+      self.hosts.ebrietas.services.sysklogd
+      self.hosts.ebrietas.services.tailscale
 
       #ebrietasSystem
       self.hosts.ebrietas.system.boot
@@ -56,7 +51,6 @@ in
 
     hjemModules = [
       #sharedHjem
-      self.hjemModules.fastfetch
       self.hjemModules.git
       self.hjemModules.gram
       self.hjemModules.picom

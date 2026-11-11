@@ -1,5 +1,5 @@
 {
-  flake.hosts.shared.services.keventd = {
+  flake.hosts.micolash.services.keventd = {
     services.keventd.enable = true;
   };
 }

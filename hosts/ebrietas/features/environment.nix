@@ -13,7 +13,8 @@
       ncpamixer
       feh
       steam
-      fastfetch
+      nerdfetch
+      gram
       helix
     ];
 

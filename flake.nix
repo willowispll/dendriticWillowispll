@@ -27,9 +27,9 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ (inputs.import-tree ./hosts) ];
-      flake.overlays.without-bloat = import ./overlays/without-bloat.nix;
-      flake.overlays.without-systemd = import ./overlays/without-systemd.nix;
-      flake.overlays.without-x11 = import ./overlays/without-x11.nix;
+      imports = [
+        (inputs.import-tree ./hosts)
+        (inputs.import-tree ./overlays)
+      ];
     };
 }
